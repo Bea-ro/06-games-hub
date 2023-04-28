@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+
 
 const Sudoku = () => {
   return (
-    <div>Sudoku</div>
+    <div>
+   
+    </div>
   )
 }
 

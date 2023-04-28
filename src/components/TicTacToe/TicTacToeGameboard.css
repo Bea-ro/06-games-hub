@@ -1,0 +1,9 @@
+.gameboard {
+    display:grid;
+    grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+    }
+
+.gamecell {
+width: 24%;
+height: 24px;
+}
