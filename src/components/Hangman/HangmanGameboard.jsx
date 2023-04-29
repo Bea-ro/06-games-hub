@@ -1,25 +1,59 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react';
+import { alphabet } from '../../data/data';
 
-const HangmanGameboard = () => {
+const HangmanGameboard = ( { word, attemps,setAttemps, setMessage, setDisabled } ) => {
 
- const [word, setWord] = useState() //casa
+  const [fails, setFails] = useState([])
+  const [selectedLetter, setSelectedLetter] = useState("")
+  const letterRef = useRef()
+  
+  console.log(word)
+ 
+  const handleLetterSelection = (letter) => {
 
- const checkLetter = (index) => {
-  console.log("checkLetter cuando metes una letra")
-  // //c0, a1, s2, a3
-  // e.target.value === word.forEach((letter) => {
-  // })
- }
-
-  return (
-    <div> 
-     
-{
-  word.forEach((letter, index) => (
-  <input key={index} type="text" value={letter} className="hangmancell" onChange={()=> {checkLetter(index)}}/>
-  ))
+    
+    if (word.includes(selectedLetter)) {
+      // word.split('').map((l) => {
+      //   if (l === letter) {} 
+      // });
+      console.log('acierto')
+  
+    } else {
+    const updatedAttemps = attemps - 1
+    setAttemps(updatedAttemps);
+    setFails([...fails, selectedLetter]);
+    setMessage(`Tienes ${updatedAttemps} intentos`);
+    if (updatedAttemps === 0) { 
+      setMessage("¡No has tenido suerte! Vuelve a jugar");
+      setDisabled(false)
+      setFails([])
+    }
   }
 
+  };
+
+
+  
+  return (
+    <div>     
+{
+  word.split('').map((letter, index) => (
+  <p key={index} ref={letterRef} className="hangmancell" hidden={selectedLetter !== letterRef.current?.innerText}>{letter}</p>
+  ))
+  } 
+
+ <div>
+  <p>{fails}</p>
+ </div>
+  
+  <div>
+ {
+  alphabet.map((letter) => (
+<button key={letter} type="button" className="hangman-key" onClick={() => {handleLetterSelection(letter)}}>{letter}</button>
+  ))
+  } 
+  </div>
+    
     </div>
   )
 }

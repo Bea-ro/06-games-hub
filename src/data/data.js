@@ -10,3 +10,9 @@ export const lines = [
     [0,4,8], 
     [2,4,6],  
   ]
+
+export const alphabet = [
+  'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
+  'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'ñ',
+  'z', 'x', 'c', 'v', 'b', 'n', 'm'
+];

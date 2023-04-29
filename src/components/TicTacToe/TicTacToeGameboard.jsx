@@ -36,7 +36,7 @@ useEffect(() => {
   return (
     <div className="gameboard">
   {
-  cells.map ((cell, index) => (
+  cells.map((cell, index) => (
   <button key={index} type="button" className="gamecell" onClick={()=> {handleMove(index)}}>{cell}</button>
   ))
   }

@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const StartButton = ( { word, setWord, disabled, setDisabled} ) => {
+const StartButton = ( { setWord, setDisabled, setMessage, setAttemps, disabled} ) => {
     
-    const words = ["arbol","casa"] //ampliar en data o ver API RAE   
-    const [inputLenght, setInputLength] = useState()  
-    
+    const words = ["arbol","casa", "mujer", "perro"] //ampliar en data o ver API RAE   
+        
     const startPlay = () => {
       const randomWord = Math.floor(Math.random() * words.length);
       setWord(words[randomWord]);
       setDisabled(true);
-      setInputLength(word.length)
+      setAttemps(10);
+      setMessage(`Tienes 10 intentos`);
     };
 
   return (
