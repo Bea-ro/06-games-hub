@@ -1,56 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import { alphabet } from '../../data/data';
+import './HangmanGameboard.css'
 
 const HangmanGameboard = ( { word, attemps,setAttemps, setMessage, setDisabled } ) => {
 
-  const [fails, setFails] = useState([])
   const [rights, setRights] = useState([])
-  
+  const [fails, setFails] = useState([])
+   const [solution, setSolution] = useState("")
+   
   console.log(word)
- 
-  //pte cuadno se aciera la palabra resetear todo como cuando se acaban los intentos
-  
-  const printRights = ((letter) => {
-    const position = word.indexOf(letter)
-    setRights([...rights.slice(0, position), letter, ...rights.slice(position)]); //ver las repes
-    console.log('en print rights', rights)
-   })
 
- 
+  //deshabilitar botonoes del teclado cuando ya se han pulsado una vez y volverlos a habilitar al acabar partida
+    
+  
   const handleLetterSelection = (letter) => {
-    if (word.includes(letter)) {      
-     console.log('acierto');
-     printRights(letter);
+    if (word.includes(letter)) {  
+      setSolution(
+        word.split('').map((l) => {
+          return l === letter? l : (rights.includes(l) ? l :"_")
+      })
+      )
+      setRights([...rights, letter]) 
     } else {
     const updatedAttemps = attemps - 1
     
     setAttemps(updatedAttemps);
     setFails([...fails, letter]);
-    console.log(fails)
     setMessage(`Tienes ${updatedAttemps} intentos`);
     if (updatedAttemps === 0) { 
       setMessage("¡No has tenido suerte! Vuelve a jugar");
-      setDisabled(false)
+      setDisabled(false);
+      setSolution("")
       setFails([])
     }
   }
-  console.log('al final del handleSelection', rights)
   };
+
+  useEffect(() => {
+if (solution) { 
+  if (!solution.includes("_")) {
+alert('Enhorabuena')
+setMessage(`Tienes 10 intentos`)
+setSolution("");
+setDisabled(false)
+setFails([]);
+
+  }}
+  }, [solution])
 
   return (
 <>
     <div>     
-  <p>{rights}</p>
+<p>{solution}</p>
   </div>
 
  <div>
-  <p>{fails}</p>
+   <p>{fails}</p> 
  </div>
   
   <div>
  {
-  alphabet.map((letter) => (
-<button key={letter} type="button" className="hangman-key" onClick={() => {handleLetterSelection(letter)}}>{letter}</button>
+  alphabet.map((alphabetLetter) => (
+<button key={alphabetLetter} type="button" className="hangman-key" onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
   ))
   } 
   </div>

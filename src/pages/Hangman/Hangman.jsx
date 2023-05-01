@@ -6,7 +6,7 @@ import HangmanStart from '../../components/ui/HangmanStart';
 
 const Hangman = ( {game}) => {
   
-  const [word, setWord] = useState("ahorcado")
+  const [word, setWord] = useState()
   const [message, setMessage] = useState();
   const [disabled, setDisabled] = useState(false);
   const [attemps, setAttemps] = useState(10) 

@@ -9,7 +9,7 @@ const StartButton = ( { setCells, player, setPlayer, setMessage, disabled, setDi
       setPlayer(players[randomPlayer]);
       setDisabled(true);
       setMessage(`Es el turno de ${player}`)
-      setCells(emptyGameboard)
+      setCells(emptyGameboard);
     };
 
     useEffect(() => {
