@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { alphabet } from '../../data/data';
 import './HangmanGameboard.css'
 
-const HangmanGameboard = ( { word, attemps,setAttemps, setMessage, setDisabled } ) => {
+const HangmanGameboard = ( { keyRefs, word, attemps,setAttemps, setMessage, setDisabled, solution, setSolution, fails, setFails } ) => {
 
   const [rights, setRights] = useState([])
-  const [fails, setFails] = useState([])
-   const [solution, setSolution] = useState("")
-   
+     
   console.log(word)
-
-  //deshabilitar botonoes del teclado cuando ya se han pulsado una vez y volverlos a habilitar al acabar partida
-    
+  
   
   const handleLetterSelection = (letter) => {
+
+  const position = alphabet.indexOf(letter)
+  keyRefs.current[position].disabled = true
+
+  
+
     if (word.includes(letter)) {  
       setSolution(
         word.split('').map((l) => {
@@ -30,22 +32,26 @@ const HangmanGameboard = ( { word, attemps,setAttemps, setMessage, setDisabled }
     if (updatedAttemps === 0) { 
       setMessage("¡No has tenido suerte! Vuelve a jugar");
       setDisabled(false);
-      setSolution("")
-      setFails([])
+      setSolution(word)
     }
   }
   };
 
   useEffect(() => {
-if (solution) { 
+if (solution && attemps !== 0) { 
   if (!solution.includes("_")) {
-alert('Enhorabuena')
-setMessage(`Tienes 10 intentos`)
-setSolution("");
-setDisabled(false)
-setFails([]);
+setMessage('¡Enhorabuena!')
+setDisabled(false);
 
-  }}
+// setInterval (() => {
+//   setSolution("");
+//   setDisabled(false)
+//   setFails([]);
+//   keyRefs.current.forEach((keyRef) => keyRef.disabled = false);
+//   setMessage('Tienes 10 intentos')    
+//   }, 2000)
+
+}}
   }, [solution])
 
   return (
@@ -60,10 +66,16 @@ setFails([]);
   
   <div>
  {
-  alphabet.map((alphabetLetter) => (
-<button key={alphabetLetter} type="button" className="hangman-key" onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
+  alphabet.map((alphabetLetter, index) => (
+<button 
+key={alphabetLetter} 
+ref={(el) => (keyRefs.current[index] = el)}
+type="button" className="hangman-key" onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
   ))
   } 
+
+ 
+
   </div>
   </>  
   )
