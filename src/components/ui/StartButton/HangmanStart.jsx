@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const StartButton = ( { keyRefs, setWord, setDisabled, setMessage, setAttemps, disabled, setSolution, setFails} ) => {
+const HangmanStart = ( { word, keyRefs, setWord, setDisabled, setMessage, setAttemps, disabled, setSolution, setFails, setRights} ) => {
     
     const words = ["arbol","casa", "mujer", "perro"] //ampliar en data o ver API RAE   
         
@@ -10,11 +10,16 @@ const StartButton = ( { keyRefs, setWord, setDisabled, setMessage, setAttemps, d
       setDisabled(true);
       setAttemps(10);
       setMessage(`Tienes 10 intentos`);   
-      setSolution("");
-      setFails([]);    
-      keyRefs.current.forEach((keyRef) => keyRef.disabled = false);  
+      setFails([]); 
+      setRights([])   
+      keyRefs.current.forEach((keyRef) => keyRef.disabled = false);        
     };
 
+    useEffect(() => {
+     if (word !== "ahorcado") {
+     setSolution(word.split('').map((l) => "_"))
+    }},[word])
+    
   return (
     <div>
         <button type="button" onClick={startPlay} disabled={disabled}>Start</button>
@@ -22,4 +27,4 @@ const StartButton = ( { keyRefs, setWord, setDisabled, setMessage, setAttemps, d
   )
 }
 
-export default StartButton
+export default HangmanStart

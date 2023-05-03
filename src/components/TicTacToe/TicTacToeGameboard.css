@@ -1,9 +1,11 @@
-.gameboard {
+.ttt-gameboard {
     display:grid;
     grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+    gap: 1px;
+    max-width: fit-content
     }
 
 .gamecell {
-width: 24%;
-height: 24px;
+width: 45px;
+height: 45px;
 }

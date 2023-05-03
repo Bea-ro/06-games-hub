@@ -1,0 +1,12 @@
+.sdk-gameboard {
+    display:grid;
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    max-width: fit-content
+    }
+
+.sdk-cell {
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        border: 1px solid black
+        }

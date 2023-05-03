@@ -34,7 +34,7 @@ useEffect(() => {
   
 
   return (
-    <div className="gameboard">
+    <div className="ttt-gameboard">
   {
   cells.map((cell, index) => (
   <button key={index} type="button" className="gamecell" onClick={()=> {handleMove(index)}}>{cell}</button>

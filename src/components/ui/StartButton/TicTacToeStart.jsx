@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { emptyGameboard } from '../../../data/data';
 
-const StartButton = ( { setCells, player, setPlayer, setMessage, disabled, setDisabled} ) => {
+const TicTacToeStart = ( { setCells, player, setPlayer, setMessage, disabled, setDisabled} ) => {
     
     const players = ["X","O"]    
     
@@ -23,4 +24,4 @@ const StartButton = ( { setCells, player, setPlayer, setMessage, disabled, setDi
   )
 }
 
-export default StartButton
+export default TicTacToeStart

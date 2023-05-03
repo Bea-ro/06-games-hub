@@ -1,34 +1,38 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, createContext } from 'react';
 import Title from '../../components/ui/Title/Title';
 import Message from '../../components/ui/Message/Message';
 import HangmanGameboard from '../../components/Hangman/HangmanGameboard';
-import HangmanStart from '../../components/ui/HangmanStart';
+import HangmanStart from '../../components/ui/StartButton/HangmanStart';
 
-const Hangman = ( {game}) => {
+export const KeyboardContext = createContext()
+
+const Hangman = ( {game, message, setMessage}) => {
   
-  const [word, setWord] = useState()
-  const [message, setMessage] = useState();
+  const [word, setWord] = useState('ahorcado')
   const [disabled, setDisabled] = useState(false);
   const [attemps, setAttemps] = useState(10)
-  const [fails, setFails] = useState([])
+  const [fails, setFails] = useState([]);
+  const [rights, setRights] = useState([])
   const [solution, setSolution] = useState("") 
   const keyRefs = useRef([])
 
+console.log(word)
   return (
     <div>
       <Title game={game}/>
       <HangmanStart word={word} setWord={setWord} setMessage={setMessage} disabled={disabled} 
       setDisabled={setDisabled} setAttemps={setAttemps}
-      setSolution={setSolution} setFails={setFails}
+      setSolution={setSolution} setFails={setFails} setRights={setRights}
       keyRefs={keyRefs}
       />
       <Message message={message}/>
-      <HangmanGameboard word={word} attemps={attemps} setAttemps={setAttemps} 
-      setMessage={setMessage} setDisabled={setDisabled} 
+      
+      <KeyboardContext.Provider value={{word:word, setSolution:setSolution, keyRefs:keyRefs, 
+        setAttemps:setAttemps, setFails:setFails, rights:rights, setRights:setRights}}>
+      <HangmanGameboard attemps={attemps} setMessage={setMessage} setDisabled={setDisabled} 
       solution={solution} fails={fails}
-      setSolution={setSolution} setFails={setFails}
-      keyRefs={keyRefs}
       />
+       </KeyboardContext.Provider>
     </div>
   )
 }
