@@ -6,15 +6,19 @@ import SudokuGameboard from '../../components/Sudoku/SudokuGameboard';
 
 const Sudoku = ( { game, message, setMessage }) => {
 
-  const [cells, setCells] = useState([null, null, null, null, null, null, null, null, null])
+  const [cells, setCells] = useState(Array(9).fill(""))
   const [disabled, setDisabled] = useState(false);
+  const [solution, setSolution] = useState(Array(9).fill(""))
 
+  console.log(solution)
+  
   return (
     <div>
     <Title game={game}/>
-      <SudokuStart disabled={disabled} setDisabled={setDisabled} cells={cells} setCells={setCells}/>
+      <SudokuStart disabled={disabled} setDisabled={setDisabled} cells={cells} setCells={setCells} solution={solution} setSolution={setSolution}/>
       <Message message={message}/>
-      <SudokuGameboard disabled={disabled} setDisabled={setDisabled} cells={cells} setCells={setCells}/>
+      <SudokuGameboard disabled={disabled} setDisabled={setDisabled} cells={cells} setCells={setCells}
+      solution={solution} setSolution={setSolution}/>
     </div>
   )
 }

@@ -1,36 +1,36 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useEffect } from 'react';
 import { sudokuNumbers } from '../../data/data';
 
 
-const SudokuKeyboard = ( { rights, setRights, solution, setSolution} ) => {
+const SudokuKeyboard = ( { cells, inputRefs, selectedInput, solution, setSolution } ) => {
 
-  const keyRefs = useRef([])
-    
+  const [attemps, setAttemps] = useState(0)
+
     const handleNumberSelection = (number) => {
-        const position = sudokuNumbers.indexOf(number)
-        keyRefs.current[position].disabled = true
-       
-          if (cells.includes(number)) {  
-            setSolution(
-              cells.map((c) => {
-                return c === number ? c : (rights.includes(c) ? c :" ")
-            })
-            )
-            setRights([...rights, number]) 
-          } 
-          //qué pasa si se acaban intentos
-        }
+      selectedInput = number;
+      setAttemps(attemps + 1)
+      };
+
+      useEffect(() => {
+        if (attemps !== 0) {
+        const position = inputRefs.indexOf(selectedInput);
+        const newSolution = solution.map((s,i) => position === i ? selectedInput : s)
+        setSolution(newSolution)   
+      }
+    },[attemps])
+  
       
-
-
+      //qué pasa si se acaban intentos   
+      //const newSolution = solution.map((s, index) => index === selectedInput ? number : s)
+ 
+      
   return (
     <div>
         {
-  sudokuNumbers.map((num, index) => (
+  sudokuNumbers.map((num, i) => (
 <button 
-key={num} 
-ref={(el) => (keyRefs.current[index] = el)}
-type="button" className="sdk-key" onClick={() => {handleNumberSelection(num)}}>{num}</button>
+key={num}
+type="button" className="sdk-key" onClick={()=>{handleNumberSelection(num)}}>{num}</button>
   ))
   } 
     </div>
