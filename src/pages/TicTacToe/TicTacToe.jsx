@@ -4,6 +4,7 @@ import Message from '../../components/ui/Message/Message';
 import TicTacToeStart from '../../components/ui/StartButton/TicTacToeStart'
 import TicTacToeGameboard from '../../components/TicTacToe/TicTacToeGameboard';
 import { emptyGameboard } from '../../data/data';
+import BackButton from '../../components/ui/BackButton/BackButton';
 
 const TicTacToe = ( {game, message, setMessage} ) => {
 
@@ -13,6 +14,7 @@ const TicTacToe = ( {game, message, setMessage} ) => {
   
   return (
     <div>
+            <BackButton/>
       <Title game={game}/>
       <TicTacToeStart setCells={setCells} player={player} setPlayer={setPlayer} setMessage={setMessage} disabled={disabled} setDisabled={setDisabled}/>
       <Message message={message}/>

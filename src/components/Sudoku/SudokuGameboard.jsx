@@ -1,20 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './SudokuGameboard.css';
-import SudokuSquare from './SudokuSquare';
+import SudokuBoard from './SudokuBoard';
 import SudokuKeyboard from './SudokuKeyboard';
 
-const SudokuGameboard = ( { cells, setCells, solution, setSolution } ) => {
+const SudokuGameboard = ( { cells, setCells } ) => {
   
-  const inputRefs = useRef([]);
   const [selectedInput, setSelectedInput] = useState(null)
-  // const [selectedInputIndex, setSelectedInputIndex] = useState()
 
+  
   return (
     <>
-    {/* <SudokuSquare solution={solution1}/> cambiarle la solución y así con 7 más */}
-   <SudokuSquare inputRefs={inputRefs} solution={solution}
-   setSelectedInput={setSelectedInput}/>
-    <SudokuKeyboard inputRefs={inputRefs} cells={cells} solution={solution} setSolution={setSolution}
+    <div className="sdk-gameboard">
+   <SudokuBoard cells={cells} setSelectedInput={setSelectedInput}/>
+   </div>
+    <SudokuKeyboard cells={cells} setCells={setCells}
     selectedInput={selectedInput}/>
     </>
   )

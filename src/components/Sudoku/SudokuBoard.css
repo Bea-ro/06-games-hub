@@ -1,0 +1,13 @@
+.sdk-square {
+    display:grid;
+    grid-template: repeat(9, 1fr)/repeat(9, 1fr);
+    max-width: fit-content;
+    max-height: fit-content;
+    }
+
+.sdk-cell {
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        border: 1px solid black
+        }

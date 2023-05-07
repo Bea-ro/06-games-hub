@@ -7,3 +7,4 @@ export const getRandomPositions = (n) => {
    }}
    return positions;
 }
+

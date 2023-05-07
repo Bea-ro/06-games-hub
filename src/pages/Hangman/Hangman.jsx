@@ -3,6 +3,7 @@ import Title from '../../components/ui/Title/Title';
 import Message from '../../components/ui/Message/Message';
 import HangmanGameboard from '../../components/Hangman/HangmanGameboard';
 import HangmanStart from '../../components/ui/StartButton/HangmanStart';
+import BackButton from '../../components/ui/BackButton/BackButton';
 
 export const KeyboardContext = createContext()
 
@@ -19,6 +20,7 @@ const Hangman = ( {game, message, setMessage}) => {
 console.log(word)
   return (
     <div>
+            <BackButton/>
       <Title game={game}/>
       <HangmanStart word={word} setWord={setWord} setMessage={setMessage} disabled={disabled} 
       setDisabled={setDisabled} setAttemps={setAttemps}
