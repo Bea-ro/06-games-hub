@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { sudokuNumbers } from '../../data/data';
 
 
-const SudokuKeyboard = ( { selectedInput, cells, setCells } ) => {
+const SudokuKeyboard = ( { selectedInput, cells, setCells, setHidden, attemps, setAttemps } ) => {
 
-  const [attemps, setAttemps] = useState(0)
+  const [number, setNumber] = useState()
   
     const handleNumberSelection = (number) => {
+      if (attemps === 0) {setHidden(false)}
       setAttemps(attemps + 1);     
-      const newCells = cells.map((cell, index) => selectedInput === index ? number : cell)
-      setCells(newCells)   
+      setNumber(number)
       };
 
-  //qué pasa si se acaban intentos   
-    
+      useEffect(() => {
+        const newCells = cells.map((cell, index) => selectedInput === index ? number : cell)
+        setCells(newCells);
+      },[number])
  
   return (
     <div>

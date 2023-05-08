@@ -20,7 +20,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/tres-en-raya" element={<TicTacToe game="Tres en raya" message={message} setMessage={setMessage}/>} />
         <Route path="/ahorcado" element={<Hangman game="Hangman" message={message} setMessage={setMessage}/>} />
-        <Route path="/sudoku" element={<Sudoku game="Sudoku"/>} message={message} setMessage={setMessage}/>
+        <Route path="/sudoku" element={<Sudoku game="Sudoku" message={message} setMessage={setMessage}/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

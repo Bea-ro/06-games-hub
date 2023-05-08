@@ -5,9 +5,21 @@
     max-height: fit-content;
     }
 
-.sdk-cell {
+.sdk-cell, .user-input, .right, .fail {
         width: 45px;
         height: 45px;
         text-align: center;
         border: 1px solid black
         }
+
+.user-input {
+    color: blue;
+}
+
+.right {
+    color: green;
+}
+
+.fail {
+    color: red;
+}

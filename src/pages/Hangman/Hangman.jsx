@@ -2,8 +2,8 @@ import React, { useState, useRef, createContext } from 'react';
 import Title from '../../components/ui/Title/Title';
 import Message from '../../components/ui/Message/Message';
 import HangmanGameboard from '../../components/Hangman/HangmanGameboard';
-import HangmanStart from '../../components/ui/StartButton/HangmanStart';
-import BackButton from '../../components/ui/BackButton/BackButton';
+import HangmanStart from '../../components/ui/Buttons/HangmanStart';
+import BackButton from '../../components/ui/Buttons/BackButton';
 
 export const KeyboardContext = createContext()
 

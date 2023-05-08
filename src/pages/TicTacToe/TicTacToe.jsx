@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Title from '../../components/ui/Title/Title';
 import Message from '../../components/ui/Message/Message';
-import TicTacToeStart from '../../components/ui/StartButton/TicTacToeStart'
+import TicTacToeStart from '../../components/ui/Buttons/TicTacToeStart'
 import TicTacToeGameboard from '../../components/TicTacToe/TicTacToeGameboard';
 import { emptyGameboard } from '../../data/data';
-import BackButton from '../../components/ui/BackButton/BackButton';
+import BackButton from '../../components/ui/Buttons/BackButton';
 
 const TicTacToe = ( {game, message, setMessage} ) => {
 
