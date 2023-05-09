@@ -5,7 +5,7 @@
     max-height: fit-content;
     }
 
-.sdk-cell, .user-input, .right, .fail {
+.sdk-cell, .user-input, .green, .red {
         width: 45px;
         height: 45px;
         text-align: center;
@@ -16,10 +16,10 @@
     color: blue;
 }
 
-.right {
-    color: rgb(111, 230, 111);
+.green {
+    color: rgb(40, 169, 40);
 }
 
-.fail {
+.red {
     color: red;
 }

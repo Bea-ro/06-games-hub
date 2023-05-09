@@ -15,7 +15,7 @@ const Sudoku = ( { game, message, setMessage }) => {
   const [hidden, setHidden] = useState (true);
   const [attemps, setAttemps] = useState(0);
   const [finish, setFinish] = useState(false)
-  const colorRefs = useRef([])
+  const inputRefs = useRef([])
 
   console.log('cells', cells)
   console.log('puzzle', puzzle)
@@ -25,26 +25,28 @@ const Sudoku = ( { game, message, setMessage }) => {
       <BackButton/>
     <Title game={game}/>
       <SudokuStart disabled={disabled} setDisabled={setDisabled}
-      setCells={setCells} colorRefs={colorRefs} puzzle={puzzle} setPuzzle={setPuzzle}
+      setCells={setCells} puzzle={puzzle} setPuzzle={setPuzzle}
+      setFinish={setFinish} inputRefs={inputRefs}
       />
 
       <SudokuSolve setDisabled={setDisabled} 
-      hidden={hidden} setHidden={setHidden} colorRefs={colorRefs}
-       attemps={attemps} puzzle={puzzle} setPuzzle={setPuzzle}
+      hidden={hidden} setHidden={setHidden}
+      setPuzzle={setPuzzle}
        setAttemps={setAttemps}
-       finish={finish} setFinish={setFinish}/>
+       setFinish={setFinish}/>
       
       <SudokuCheck cells={cells}
-      setDisabled={setDisabled} hidden={hidden} setHidden={setHidden} attemps={attemps}
-       setMessage={setMessage} colorRefs={colorRefs}
+      setDisabled={setDisabled} hidden={hidden} setHidden={setHidden}
+       setMessage={setMessage} inputRefs={inputRefs}
        setAttemps={setAttemps} puzzle={puzzle} setPuzzle={setPuzzle}
-       finish={finish} setFinish={setFinish}/>
+       finish={finish} setFinish={setFinish}
+       />
       
       <Message message={message}/>
       
       <SudokuGameboard cells={cells} setCells={setCells} 
-      setHidden={setHidden} attemps={attemps} setAttemps={setAttemps} colorRefs={colorRefs}
-      puzzle={puzzle} setPuzzle={setPuzzle}/>
+      setHidden={setHidden} attemps={attemps} setAttemps={setAttemps} inputRefs={inputRefs}
+     />
     </div>
   )
 }

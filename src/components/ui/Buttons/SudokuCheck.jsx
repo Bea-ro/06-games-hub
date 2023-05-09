@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { solvepuzzle } from 'sudoku';
 
-const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, setAttemps, setMessage, colorRefs, puzzle, setPuzzle, finish, setFinish } ) => {
+const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, setAttemps, setMessage, inputRefs, puzzle, setPuzzle, finish, setFinish } ) => {
 
   const [checkDisabled, setCheckDisabled] = useState()
+  const [cellsForCompare, setCellsForCompare] = useState()
 
- 
+  console.log('cellsForCompare', cellsForCompare)
+   
     const checkSudoku = () => {
         setDisabled(false);
         setHidden(true);
@@ -16,13 +18,13 @@ const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, setAttemps, setMe
 
         useEffect(() => {
           cells.includes(null) ? setCheckDisabled(true) : setCheckDisabled(false);
+          setCellsForCompare(inputRefs.current.map((inputRef) => inputRef.value))      
         }, [cells])
 
         useEffect(() => {
-          if (finish) {
-            console.log(colorRefs.current[0].value === puzzle[0] + 1)
-        for (let i = 0; i < colorRefs.current.length; i++) {
-          colorRefs.current[i].value === puzzle[i] + 1 ? colorRefs.current[i].className = 'right' : colorRefs.current[i].className = 'fail'    
+          if (finish) {          
+        for (let i = 0; i < cellsForCompare.length; i++) {
+          parseInt(cellsForCompare[i]) === (puzzle[i]) + 1 ? inputRefs.current[i].className = 'green' :  inputRefs.current[i].className = 'red'    
       }}
         if (finish && !cells.includes(null)) {cells === puzzle ? setMessage('¡Enhorabuena crack!') : setMessage('OOOHHH')}
         }, [finish])

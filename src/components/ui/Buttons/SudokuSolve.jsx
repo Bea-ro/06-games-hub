@@ -1,7 +1,7 @@
 import React, { useEffect} from 'react';
 import { solvepuzzle } from 'sudoku';
 
-const SudokuSolve = ( { setDisabled, hidden, setHidden, setAttemps, colorRefs, puzzle, setPuzzle, finish, setFinish } ) => {
+const SudokuSolve = ( { setDisabled, hidden, setHidden, setAttemps, setPuzzle, setFinish } ) => {
 
     const solveSudoku = () => {
       setDisabled(false);
