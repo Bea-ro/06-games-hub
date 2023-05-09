@@ -13,7 +13,7 @@ const SudokuKeyboard = ( { selectedInput, cells, setCells, setHidden, attemps, s
       };
 
       useEffect(() => {
-        const newCells = cells.map((cell, index) => selectedInput === index ? number : cell)
+        const newCells = cells.map((cell, index) => selectedInput === index ? number -1 : cell)
         setCells(newCells);
       },[number])
  

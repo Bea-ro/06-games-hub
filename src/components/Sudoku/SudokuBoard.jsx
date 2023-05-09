@@ -1,12 +1,11 @@
 import React from 'react';
 import './SudokuBoard.css';
-import { solvepuzzle } from 'sudoku';
 
-const SudokuBoard = ( { cells, setSelectedInput, colorRefs, setSolution } ) => {
+
+const SudokuBoard = ( { cells, setSelectedInput, colorRefs, setSolution, setCells } ) => {
 
 const handleInputClick = (i) => {
 setSelectedInput(i);
-setSolution(solvepuzzle);
 colorRefs.current[i].className = "user-input";
 }
 
@@ -14,7 +13,7 @@ colorRefs.current[i].className = "user-input";
          <div className="sdk-square">
         {
   cells.map((cell, index) => (
-    <input key={index} type="number" min="1" max="9" className="sdk-cell" value={cell === null ? '' : cell} 
+    <input key={index} type="number" min="1" max="9" className="sdk-cell" value={cell === null ? '' : cell + 1} 
     onClick={()=>{handleInputClick(index)}}
     ref={(el) => {colorRefs.current[index] = el}}
     />

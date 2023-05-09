@@ -11,35 +11,42 @@ const Sudoku = ( { game, message, setMessage }) => {
 
   const [cells, setCells] = useState(Array(81).fill(null));
   const [solution, setSolution] = useState(Array(81).fill(null));
+  const [puzzle, setPuzzle] = useState(Array(81).fill(null));
   const [disabled, setDisabled] = useState(false);
   const [hidden, setHidden] = useState (true);
   const [attemps, setAttemps] = useState(0);
+  const [finish, setFinish] = useState(false)
   const colorRefs = useRef([])
 
   console.log('solution', solution);
   console.log('cells', cells)
-
+  console.log('puzzle', puzzle)
   
   return (
     <div>
       <BackButton/>
     <Title game={game}/>
       <SudokuStart disabled={disabled} setDisabled={setDisabled}
-      setCells={setCells} colorRefs={colorRefs}
+      setCells={setCells} colorRefs={colorRefs} puzzle={puzzle} setPuzzle={setPuzzle}
       />
 
-      <SudokuSolve solution={solution} setDisabled={setDisabled} 
+      <SudokuSolve setDisabled={setDisabled} 
       hidden={hidden} setHidden={setHidden} colorRefs={colorRefs}
-       setCells={setCells} attemps={attemps}/>
+       attemps={attemps} puzzle={puzzle} setPuzzle={setPuzzle}
+       setAttemps={setAttemps}
+       finish={finish} setFinish={setFinish}/>
       
-      <SudokuCheck cells={cells} setCells={setCells} solution={solution} 
+      <SudokuCheck cells={cells} solution={solution} 
       setDisabled={setDisabled} hidden={hidden} setHidden={setHidden} attemps={attemps}
-       setMessage={setMessage} colorRefs={colorRefs}/>
+       setMessage={setMessage} colorRefs={colorRefs}
+       setAttemps={setAttemps} puzzle={puzzle} setPuzzle={setPuzzle}
+       finish={finish} setFinish={setFinish}/>
       
       <Message message={message}/>
       
       <SudokuGameboard cells={cells} setCells={setCells} setSolution={setSolution}
-      setHidden={setHidden} attemps={attemps} setAttemps={setAttemps} colorRefs={colorRefs}/>
+      setHidden={setHidden} attemps={attemps} setAttemps={setAttemps} colorRefs={colorRefs}
+      puzzle={puzzle} setPuzzle={setPuzzle}/>
     </div>
   )
 }

@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect} from 'react';
+import { solvepuzzle } from 'sudoku';
 
-const SudokuSolve = ( { setDisabled, solution, hidden, setHidden, setCells, setAttemps, colorRefs } ) => {
+const SudokuSolve = ( { setDisabled, hidden, setHidden, setAttemps, colorRefs, puzzle, setPuzzle, finish, setFinish } ) => {
 
     const solveSudoku = () => {
       setDisabled(false);
       setHidden(true);
       setAttemps(0);
-      setCells(solution)
-      for (let i = 0; i < colorRefs.current.length; i++) {
-          colorRefs.current[i].value === solution[i] ? colorRefs.current[i].className = "right" : colorRefs.current[i].className = "fail"  
-          }                 
+      setPuzzle(solvepuzzle)
+      setFinish(true)       
       };
+
+      // useEffect(() => {
+      //   for (let i = 0; i < colorRefs.current.length; i++) {
+      //   colorRefs.current[i].value === puzzle[i] + 1 ? colorRefs.current[i].className = 'right' : colorRefs.current[i].className = 'fail'  
+      //   }
+      // }, [puzzle])          
 
   return (
     <div>
