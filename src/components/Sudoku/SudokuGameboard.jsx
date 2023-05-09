@@ -3,7 +3,7 @@ import './SudokuGameboard.css';
 import SudokuBoard from './SudokuBoard';
 import SudokuKeyboard from './SudokuKeyboard';
 
-const SudokuGameboard = ( { cells, setCells, setSolution, setHidden, attemps, setAttemps, colorRefs, setPuzzle } ) => {
+const SudokuGameboard = ( { cells, setCells, setHidden, attemps, setAttemps, colorRefs, setPuzzle } ) => {
   
   const [selectedInput, setSelectedInput] = useState()
   
@@ -11,7 +11,7 @@ const SudokuGameboard = ( { cells, setCells, setSolution, setHidden, attemps, se
     <>
     <div className="sdk-gameboard">
    <SudokuBoard cells={cells} setSelectedInput={setSelectedInput} colorRefs={colorRefs}
-   setSolution={setSolution} setCells={setCells}
+    setCells={setCells}
    />
    </div>
 

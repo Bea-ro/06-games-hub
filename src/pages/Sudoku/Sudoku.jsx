@@ -10,7 +10,6 @@ import SudokuCheck from '../../components/ui/Buttons/SudokuCheck';
 const Sudoku = ( { game, message, setMessage }) => {
 
   const [cells, setCells] = useState(Array(81).fill(null));
-  const [solution, setSolution] = useState(Array(81).fill(null));
   const [puzzle, setPuzzle] = useState(Array(81).fill(null));
   const [disabled, setDisabled] = useState(false);
   const [hidden, setHidden] = useState (true);
@@ -18,7 +17,6 @@ const Sudoku = ( { game, message, setMessage }) => {
   const [finish, setFinish] = useState(false)
   const colorRefs = useRef([])
 
-  console.log('solution', solution);
   console.log('cells', cells)
   console.log('puzzle', puzzle)
   
@@ -36,7 +34,7 @@ const Sudoku = ( { game, message, setMessage }) => {
        setAttemps={setAttemps}
        finish={finish} setFinish={setFinish}/>
       
-      <SudokuCheck cells={cells} solution={solution} 
+      <SudokuCheck cells={cells}
       setDisabled={setDisabled} hidden={hidden} setHidden={setHidden} attemps={attemps}
        setMessage={setMessage} colorRefs={colorRefs}
        setAttemps={setAttemps} puzzle={puzzle} setPuzzle={setPuzzle}
@@ -44,7 +42,7 @@ const Sudoku = ( { game, message, setMessage }) => {
       
       <Message message={message}/>
       
-      <SudokuGameboard cells={cells} setCells={setCells} setSolution={setSolution}
+      <SudokuGameboard cells={cells} setCells={setCells} 
       setHidden={setHidden} attemps={attemps} setAttemps={setAttemps} colorRefs={colorRefs}
       puzzle={puzzle} setPuzzle={setPuzzle}/>
     </div>

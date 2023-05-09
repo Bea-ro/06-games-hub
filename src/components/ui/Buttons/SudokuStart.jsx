@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { makepuzzle } from 'sudoku';
 
-const SudokuStart = ( { disabled, setDisabled, setCells, colorRefs, setSolution, puzzle, setPuzzle } ) => {
+const SudokuStart = ( { disabled, setDisabled, setCells, colorRefs, puzzle, setPuzzle } ) => {
  
   const startPlay = () => {
     setPuzzle(makepuzzle);

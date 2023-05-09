@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { solvepuzzle } from 'sudoku';
 
-const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, solution, setAttemps, setMessage, colorRefs, puzzle, setPuzzle, finish, setFinish } ) => {
+const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, setAttemps, setMessage, colorRefs, puzzle, setPuzzle, finish, setFinish } ) => {
 
   const [checkDisabled, setCheckDisabled] = useState()
 
@@ -20,8 +20,9 @@ const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, solution, setAtte
 
         useEffect(() => {
           if (finish) {
+            console.log(colorRefs.current[0].value === puzzle[0] + 1)
         for (let i = 0; i < colorRefs.current.length; i++) {
-        colorRefs.current[i].value === solution[i] ? colorRefs.current[i].className = "right" : colorRefs.current[i].className = "fail"  
+          colorRefs.current[i].value === puzzle[i] + 1 ? colorRefs.current[i].className = 'right' : colorRefs.current[i].className = 'fail'    
       }}
         if (finish && !cells.includes(null)) {cells === puzzle ? setMessage('¡Enhorabuena crack!') : setMessage('OOOHHH')}
         }, [finish])

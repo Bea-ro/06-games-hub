@@ -9,13 +9,7 @@ const SudokuSolve = ( { setDisabled, hidden, setHidden, setAttemps, colorRefs, p
       setAttemps(0);
       setPuzzle(solvepuzzle)
       setFinish(true)       
-      };
-
-      // useEffect(() => {
-      //   for (let i = 0; i < colorRefs.current.length; i++) {
-      //   colorRefs.current[i].value === puzzle[i] + 1 ? colorRefs.current[i].className = 'right' : colorRefs.current[i].className = 'fail'  
-      //   }
-      // }, [puzzle])          
+      }; 
 
   return (
     <div>

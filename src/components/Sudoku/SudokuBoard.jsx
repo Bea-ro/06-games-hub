@@ -2,7 +2,7 @@ import React from 'react';
 import './SudokuBoard.css';
 
 
-const SudokuBoard = ( { cells, setSelectedInput, colorRefs, setSolution, setCells } ) => {
+const SudokuBoard = ( { cells, setSelectedInput, colorRefs, setCells } ) => {
 
 const handleInputClick = (i) => {
 setSelectedInput(i);
