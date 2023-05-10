@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { makepuzzle } from 'sudoku';
 
-const SudokuStart = ( { disabled, setDisabled, setCells, puzzle, setPuzzle, setFinish, inputRefs } ) => {
+const SudokuStart = ( { disabled, setDisabled, setCells, puzzle, setPuzzle, setFinish, inputRefs, setMessage } ) => {
  
   const startPlay = () => {
     setPuzzle(makepuzzle);
     setDisabled(true);
     setFinish(false);  
-    inputRefs.current[i].className = "sdk-cell"        
+    setMessage("")
+    inputRefs.current.map((inputRef) => inputRef.className = 'sdk-cell')    
   };
 
   useEffect(() => {

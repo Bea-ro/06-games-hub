@@ -20,13 +20,16 @@ const Hangman = ( {game, message, setMessage}) => {
 console.log(word)
   return (
     <div>
-            <BackButton/>
+      <BackButton/>
+      
       <Title game={game}/>
+      
       <HangmanStart word={word} setWord={setWord} setMessage={setMessage} disabled={disabled} 
       setDisabled={setDisabled} setAttemps={setAttemps}
       setSolution={setSolution} setFails={setFails} setRights={setRights}
       keyRefs={keyRefs}
       />
+
       <Message message={message}/>
       
       <KeyboardContext.Provider value={{word:word, setSolution:setSolution, keyRefs:keyRefs, 

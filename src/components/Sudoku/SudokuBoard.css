@@ -12,6 +12,10 @@
         border: 1px solid black
         }
 
+.sdk-cell {
+    color: black
+}
+
 .user-input {
     color: blue;
 }

@@ -1,19 +1,21 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import { solvepuzzle } from 'sudoku';
 
-const SudokuSolve = ( { setDisabled, hidden, setHidden, setAttemps, setPuzzle, setFinish } ) => {
+const SudokuSolve = ( { setDisabled, hidden, setHidden, setPuzzle, setFinish } ) => {
 
     const solveSudoku = () => {
       setDisabled(false);
       setHidden(true);
-      setAttemps(0);
       setPuzzle(solvepuzzle)
-      setFinish(true)       
+      setFinish(true);
       }; 
 
-  return (
+   return (
     <div>
-         <button type="button" onClick={solveSudoku} hidden={hidden}>Resolver</button>
+         <button type="button" onClick={solveSudoku} 
+        hidden={hidden}
+         >Resolver</button>
+          
     </div>
   )
 }

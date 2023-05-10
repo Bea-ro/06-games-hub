@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { sudokuNumbers } from '../../data/data';
+import { GameboardContext } from '../../pages/Sudoku/Sudoku';
 
+const SudokuKeyboard = ( { selectedInput } ) => {
 
-const SudokuKeyboard = ( { selectedInput, cells, setCells, setHidden, attemps, setAttemps } ) => {
-
-  const [number, setNumber] = useState()
+  const {cells, setCells, setHidden } = useContext(GameboardContext)
   
     const handleNumberSelection = (number) => {
-      if (attemps === 0) {setHidden(false)}
-      setAttemps(attemps + 1);     
-      setNumber(number)
+      setHidden(false);   
+      const newCells = cells.map((cell, index) => selectedInput === index ? number -1 : cell)
+      setCells(newCells);
       };
 
-      useEffect(() => {
-        const newCells = cells.map((cell, index) => selectedInput === index ? number -1 : cell)
-        setCells(newCells);
-      },[number])
- 
   return (
     <div>
         {

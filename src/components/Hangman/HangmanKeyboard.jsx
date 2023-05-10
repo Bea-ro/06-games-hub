@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { alphabet } from '../../data/data';
 import { KeyboardContext } from '../../pages/Hangman/Hangman';
 

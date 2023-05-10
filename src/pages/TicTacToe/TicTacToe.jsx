@@ -14,10 +14,14 @@ const TicTacToe = ( {game, message, setMessage} ) => {
   
   return (
     <div>
-            <BackButton/>
+      <BackButton/>
+      
       <Title game={game}/>
+      
       <TicTacToeStart setCells={setCells} player={player} setPlayer={setPlayer} setMessage={setMessage} disabled={disabled} setDisabled={setDisabled}/>
+      
       <Message message={message}/>
+      
       <TicTacToeGameboard cells={cells} setCells={setCells} player={player} setPlayer={setPlayer} setMessage={setMessage} setDisabled={setDisabled}/>
 </div>
   )
