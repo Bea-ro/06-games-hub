@@ -1,0 +1,22 @@
+.main-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-cards-container {
+display: flex;
+justify-content: space-between;
+padding: 0;
+gap: 12px;
+}
+
+.game-card-container {
+background-color: var(--color-blue);
+padding: 20px;
+border-radius: 15px;
+}
+
+.game-card-link {
+background-color: inherit;
+}

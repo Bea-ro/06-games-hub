@@ -23,7 +23,7 @@ const Sudoku = ( { game, message, setMessage }) => {
 
   
   return (
-    <div>
+    <main>
       <BackButton/>
 
     <Title game={game}/>
@@ -52,7 +52,7 @@ const Sudoku = ( { game, message, setMessage }) => {
       <SudokuGameboard/>
       </GameboardContext.Provider>
      
-    </div>
+    </main>
   )
 }
 

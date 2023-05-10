@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './NotFound.css'
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <main>
+          <figure className="loading-error-figure">
+<h2 className="loading-error-message">Error 404: esta página no existe.</h2>
+</figure>
+    </main>
   )
 }
 

@@ -13,7 +13,7 @@ const TicTacToe = ( {game, message, setMessage} ) => {
   const [disabled, setDisabled] = useState(false)
   
   return (
-    <div>
+    <main>
       <BackButton/>
       
       <Title game={game}/>
@@ -23,7 +23,7 @@ const TicTacToe = ( {game, message, setMessage} ) => {
       <Message message={message}/>
       
       <TicTacToeGameboard cells={cells} setCells={setCells} player={player} setPlayer={setPlayer} setMessage={setMessage} setDisabled={setDisabled}/>
-</div>
+</main>
   )
 };
 

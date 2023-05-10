@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dosis&display=swap');
+
+@font-face {
+font-family: 'Bruno Ace', cursive;
+font-family: 'Dosis', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dosis&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* @keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Bruno Ace', cursive;
   line-height: 1.5;
   font-weight: 400;
 
@@ -8,5 +27,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --color-violet: #ae3dff;
+  --color-blue: #55ffe2;
+  --color-pink: #ff3b93;
+  --color-green: #a7fd2a;
+  --background-color: #37023a;
+
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  background-color: var(--background-color);
+  color: white;
+}
+
+main {
+  height: 75vh;
 }
 

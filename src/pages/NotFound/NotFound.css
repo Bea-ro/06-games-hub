@@ -1,0 +1,16 @@
+.loading-error-figure {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-dark-blue);
+    height: 73vh;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.loading-error-message {
+    padding: 0 24px
+    }
+

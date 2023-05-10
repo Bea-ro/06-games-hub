@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import './Header.css';
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <header>
+      <h1>Recreativos</h1>
+    </header>
   )
 }
 

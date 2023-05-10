@@ -1,0 +1,13 @@
+footer {
+    text-align: center;
+    max-height: 10vh;
+  }
+  
+  footer p {
+    font-size: small;
+    padding: 24px;
+  }
+  
+  footer a {
+    font-weight: 700;
+  }

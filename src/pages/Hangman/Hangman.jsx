@@ -1,4 +1,5 @@
 import React, { useState, useRef, createContext } from 'react';
+import './Hangman.css';
 import Title from '../../components/ui/Title/Title';
 import Message from '../../components/ui/Message/Message';
 import HangmanGameboard from '../../components/Hangman/HangmanGameboard';
@@ -19,7 +20,7 @@ const Hangman = ( {game, message, setMessage}) => {
 
 console.log(word)
   return (
-    <div>
+    <main>
       <BackButton/>
       
       <Title game={game}/>
@@ -38,7 +39,7 @@ console.log(word)
       solution={solution} fails={fails}
       />
        </KeyboardContext.Provider>
-    </div>
+    </main>
   )
 }
 

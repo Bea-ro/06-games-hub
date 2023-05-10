@@ -1,0 +1,21 @@
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: inherit;
+    min-width: 240px;
+}
+
+.game-name {
+    color: var(--color-violet)
+}
+
+.game-card h1, .game-card figure, .game-card img, .game-card p  {
+    background-color: inherit;
+}
+
+.game-description {
+    color: var(--background-color);
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
