@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import { emptyGameboard } from '../../../data/data';
+import './Button.css';
 
-const TicTacToeStart = ( { setCells, player, setPlayer, setMessage, disabled, setDisabled} ) => {
+const TicTacToeStart = ( { setCells, player, setPlayer, setMessage, disabled, setDisabled, setWinnerCells} ) => {
     
     const players = ["X","O"]    
-    
+
     const startPlay = () => {
       const randomPlayer = Math.floor(Math.random() * players.length);
       setPlayer(players[randomPlayer]);
       setDisabled(true);
       setMessage(`Es el turno de ${player}`)
       setCells(emptyGameboard);
+      setWinnerCells()
     };
 
     useEffect(() => {
@@ -18,9 +20,9 @@ const TicTacToeStart = ( { setCells, player, setPlayer, setMessage, disabled, se
     }, [player])
 
   return (
-    <div>
-        <button type="button" onClick={startPlay} disabled={disabled}>Start</button>
-    </div>
+    <>
+        <button type="button" className="button" id="start" onClick={startPlay} disabled={disabled}>Start</button>
+    </>
   )
 }
 

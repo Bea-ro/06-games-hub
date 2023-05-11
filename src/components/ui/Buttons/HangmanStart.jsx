@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
+import './Button.css';
 
-const HangmanStart = ( { word, keyRefs, setWord, setDisabled, setMessage, setAttemps, disabled, setSolution, setFails, setRights} ) => {
+const HangmanStart = ( { word, keyRefs, setWord, setDisabled, setMessage, setAttemps, disabled, setSolution, setWrongs, setRights} ) => {
     
-    const words = ["arbol","casa", "mujer", "perro"] //ampliar en data o ver API RAE   
+    const words = ["arbol","casa", "mujer", "perro"] //ampliar en data o ver API RAE  
         
     const startPlay = () => {
       const randomWord = Math.floor(Math.random() * words.length);
@@ -10,7 +11,7 @@ const HangmanStart = ( { word, keyRefs, setWord, setDisabled, setMessage, setAtt
       setDisabled(true);
       setAttemps(10);
       setMessage(`Tienes 10 intentos`);   
-      setFails([]); 
+      setWrongs([]); 
       setRights([])   
       keyRefs.current.forEach((keyRef) => keyRef.disabled = false);        
     };
@@ -21,9 +22,9 @@ const HangmanStart = ( { word, keyRefs, setWord, setDisabled, setMessage, setAtt
     }},[word])
     
   return (
-    <div>
-        <button type="button" onClick={startPlay} disabled={disabled}>Start</button>
-    </div>
+    <>
+        <button type="button" className="button" id="start" onClick={startPlay} disabled={disabled}>Start</button>
+    </>
   )
 }
 

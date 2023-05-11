@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './Title.css'
 
 const Title = ( {game} ) => {
 
   return (
-    <div>
-        <h1>{game}</h1>
-        </div>
+    <>
+        <h1 className="game-title">{game}</h1>
+        </>
   )
 }
 

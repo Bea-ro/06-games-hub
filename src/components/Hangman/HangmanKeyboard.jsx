@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import './HangmanKeyboard.css'
 import { alphabet } from '../../data/data';
 import { KeyboardContext } from '../../pages/Hangman/Hangman';
 
-const HangmanKeyboard = ( {attemps, fails, setMessage, setDisabled} ) => {
+const HangmanKeyboard = ( {attemps, wrongs, setMessage, setDisabled} ) => {
     
-    const {word, keyRefs, setSolution, setAttemps, setFails, rights, setRights} = useContext(KeyboardContext)
+    const {word, keyRefs, setSolution, setAttemps, setWrongs, rights, setRights} = useContext(KeyboardContext)
 
     const handleLetterSelection = (letter) => {
         const position = alphabet.indexOf(letter)
@@ -21,7 +22,7 @@ const HangmanKeyboard = ( {attemps, fails, setMessage, setDisabled} ) => {
           const updatedAttemps = attemps - 1
           
           setAttemps(updatedAttemps);
-          setFails([...fails, letter]);
+          setWrongs([...wrongs, letter]);
           setMessage(`Tienes ${updatedAttemps} intentos`);
           if (updatedAttemps === 0) { 
             setMessage("¡No has tenido suerte! Vuelve a jugar");
@@ -33,13 +34,13 @@ const HangmanKeyboard = ( {attemps, fails, setMessage, setDisabled} ) => {
 
 
   return (
-    <div>
+    <div className="hangman-keyboard">
         {
   alphabet.map((alphabetLetter, index) => (
 <button 
 key={alphabetLetter} 
 ref={(el) => (keyRefs.current[index] = el)}
-type="button" className="hangman-key" onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
+type="button" className="key" onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
   ))
   } 
     </div>

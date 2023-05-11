@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './Message.css'
 
 const Message = ( { message } ) => {
 
   return (
-    <div>
-<h2>{message}</h2>
-    </div>
+    <>
+<h2 className="message">{message}</h2>
+    </>
   )
 }
 

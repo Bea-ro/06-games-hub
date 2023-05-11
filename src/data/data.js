@@ -12,11 +12,16 @@ export const lines = [
   ]
 
 export const alphabet = [
-  'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
+  'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 
   'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'ñ',
   'z', 'x', 'c', 'v', 'b', 'n', 'm'
 ];
 
 export const sudokuNumbers = [1,2,3,4,5,6,7,8,9];
+
+export const color = {
+  X: 'var(--color-pink)',
+  O: 'var(--color-green)'
+}
 
     

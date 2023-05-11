@@ -3,7 +3,7 @@ import './HangmanGameboard.css'
 import HangmanKeyboard from './HangmanKeyboard';
 
 
-const HangmanGameboard = ( { solution, attemps, setMessage, setDisabled, fails } ) => {
+const HangmanGameboard = ( { solution, attemps, setMessage, setDisabled, wrongs } ) => {
 
   useEffect(() => {
 if (solution && attemps !== 0) { 
@@ -15,14 +15,14 @@ setDisabled(false);
 
   return (
 <>
-    <div>     
+    <div className="word">     
 <p>{solution}</p>
   </div>
 
- <div>
-   <p>{fails}</p> 
+ <div className="wrongs">
+   <p>{wrongs}</p> 
  </div>
- <HangmanKeyboard attemps={attemps} fails={fails} setMessage={setMessage} setDisabled={setDisabled}
+ <HangmanKeyboard attemps={attemps} wrongs={wrongs} setMessage={setMessage} setDisabled={setDisabled}
  />
 
   </>  

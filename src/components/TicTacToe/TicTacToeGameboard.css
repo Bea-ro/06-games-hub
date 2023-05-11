@@ -1,11 +1,36 @@
 .ttt-gameboard {
     display:grid;
     grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
-    gap: 1px;
-    max-width: fit-content
+    padding: 24px;
     }
 
 .gamecell {
-width: 45px;
-height: 45px;
+width: 76px;
+height: 76px;
+font-size: 48px; 
 }
+
+#gamecell-1, #gamecell-4 {
+border-right: var(--border-blue);
+border-bottom: var(--border-blue);
+border-left: var(--border-blue);
+}
+
+#gamecell-0, #gamecell-2, #gamecell-3, #gamecell-5  {
+    border-bottom: var(--border-blue);
+}
+
+#gamecell-7 {
+    border-right: var(--border-blue);
+    border-left: var(--border-blue);
+    }
+    
+.green {
+    color: var(--color-green)
+}
+
+.pink {
+    color: var(--color-pink)
+}
+
+

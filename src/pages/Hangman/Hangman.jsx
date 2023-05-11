@@ -1,5 +1,4 @@
 import React, { useState, useRef, createContext } from 'react';
-import './Hangman.css';
 import Title from '../../components/ui/Title/Title';
 import Message from '../../components/ui/Message/Message';
 import HangmanGameboard from '../../components/Hangman/HangmanGameboard';
@@ -13,7 +12,7 @@ const Hangman = ( {game, message, setMessage}) => {
   const [word, setWord] = useState('ahorcado')
   const [disabled, setDisabled] = useState(false);
   const [attemps, setAttemps] = useState(10)
-  const [fails, setFails] = useState([]);
+  const [wrongs, setWrongs] = useState([]);
   const [rights, setRights] = useState([])
   const [solution, setSolution] = useState("") 
   const keyRefs = useRef([])
@@ -21,22 +20,22 @@ const Hangman = ( {game, message, setMessage}) => {
 console.log(word)
   return (
     <main>
+      <div className="game-header">
       <BackButton/>
-      
       <Title game={game}/>
-      
       <HangmanStart word={word} setWord={setWord} setMessage={setMessage} disabled={disabled} 
       setDisabled={setDisabled} setAttemps={setAttemps}
-      setSolution={setSolution} setFails={setFails} setRights={setRights}
+      setSolution={setSolution} setWrongs={setWrongs} setRights={setRights}
       keyRefs={keyRefs}
       />
+      </div>
 
       <Message message={message}/>
       
       <KeyboardContext.Provider value={{word:word, setSolution:setSolution, keyRefs:keyRefs, 
-        setAttemps:setAttemps, setFails:setFails, rights:rights, setRights:setRights}}>
+        setAttemps:setAttemps, setWrongs:setWrongs, rights:rights, setRights:setRights}}>
       <HangmanGameboard attemps={attemps} setMessage={setMessage} setDisabled={setDisabled} 
-      solution={solution} fails={fails}
+      solution={solution} wrongs={wrongs}
       />
        </KeyboardContext.Provider>
     </main>

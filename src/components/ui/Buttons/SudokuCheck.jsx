@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { solvepuzzle } from 'sudoku';
+import './Button.css';
 
 const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, setMessage, inputRefs, puzzle, setPuzzle, finish, setFinish } ) => {
 
@@ -33,12 +34,12 @@ const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, setMessage, input
         }, [finish])
   
     return (
-      <div>
-           <button type="button" onClick={checkSudoku} 
+      <>
+           <button type="button" className="button" onClick={checkSudoku} 
            hidden={hidden}
            disabled={checkDisabled}
            >Comprobar</button>
-      </div>
+      </>
     )
 }
 

@@ -10,19 +10,23 @@ const TicTacToe = ( {game, message, setMessage} ) => {
 
   const [cells, setCells] = useState(emptyGameboard);
   const [player, setPlayer] = useState();
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(false);
+  const [winnerCells, setWinnerCells] = useState()
   
   return (
     <main>
+      <div className="game-header">
       <BackButton/>
-      
       <Title game={game}/>
-      
-      <TicTacToeStart setCells={setCells} player={player} setPlayer={setPlayer} setMessage={setMessage} disabled={disabled} setDisabled={setDisabled}/>
-      
+      <TicTacToeStart setCells={setCells} player={player} setPlayer={setPlayer} 
+      setMessage={setMessage} disabled={disabled} setDisabled={setDisabled}
+      setWinnerCells={setWinnerCells}/>
+      </div>      
       <Message message={message}/>
       
-      <TicTacToeGameboard cells={cells} setCells={setCells} player={player} setPlayer={setPlayer} setMessage={setMessage} setDisabled={setDisabled}/>
+      <TicTacToeGameboard cells={cells} setCells={setCells} player={player} setPlayer={setPlayer}
+      setMessage={setMessage} disabled={disabled} setDisabled={setDisabled}
+      winnerCells={winnerCells} setWinnerCells={setWinnerCells}/>
 </main>
   )
 };

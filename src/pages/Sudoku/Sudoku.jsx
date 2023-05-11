@@ -24,14 +24,14 @@ const Sudoku = ( { game, message, setMessage }) => {
   
   return (
     <main>
+      <div className="game-header">
       <BackButton/>
-
     <Title game={game}/>
-
       <SudokuStart disabled={disabled} setDisabled={setDisabled}
       setCells={setCells} puzzle={puzzle} setPuzzle={setPuzzle}
       setFinish={setFinish} inputRefs={inputRefs} setMessage={setMessage}
       />
+</div>
 
       <SudokuSolve setDisabled={setDisabled} 
       hidden={hidden} setHidden={setHidden}

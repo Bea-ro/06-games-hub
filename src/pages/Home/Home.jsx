@@ -10,7 +10,7 @@ const Home = () => {
       <ul className="game-cards-container">
         {
         games.map((game) => (
-          <li className="game-card-container">
+          <li className="game-card-container" key={game.name}>
          <Link to={game.link} className="game-card-link"><GameCard 
          game={game.name} image={game.image} description={game.description}/></Link>
          </li>

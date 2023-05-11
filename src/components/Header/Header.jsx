@@ -4,7 +4,7 @@ import './Header.css';
 const Header = () => {
   return (
     <header>
-      <h1>Recreativos</h1>
+      <h1>¿A qué jugamos?</h1>
     </header>
   )
 }

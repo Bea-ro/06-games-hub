@@ -16,7 +16,7 @@ const SudokuKeyboard = ( { selectedInput } ) => {
     <div>
         {
   sudokuNumbers.map((num) => (
-<button 
+<button className="key" 
 key={num}
 type="button" className="sdk-key" onClick={()=>{handleNumberSelection(num)}}>{num}</button>
   ))

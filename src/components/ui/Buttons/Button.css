@@ -1,0 +1,14 @@
+.button {
+border: 1px solid violet;
+border-radius: 10px;
+padding: 10px;
+font-family: 'Bruno Ace', cursive;
+}
+
+#start {
+    background-color: var(--color-green);
+}
+
+#back {
+    background-color: var(--color-violet);
+}
