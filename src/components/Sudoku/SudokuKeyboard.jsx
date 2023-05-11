@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './SudokuKeyboard.css';
 import { sudokuNumbers } from '../../data/data';
 import { GameboardContext } from '../../pages/Sudoku/Sudoku';
 
@@ -13,12 +14,12 @@ const SudokuKeyboard = ( { selectedInput } ) => {
       };
 
   return (
-    <div>
+    <div className="sudoku-keyboard">
         {
   sudokuNumbers.map((num) => (
 <button className="key" 
 key={num}
-type="button" className="sdk-key" onClick={()=>{handleNumberSelection(num)}}>{num}</button>
+type="button" onClick={()=>{handleNumberSelection(num)}}>{num}</button>
   ))
   } 
     </div>

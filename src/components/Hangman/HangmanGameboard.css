@@ -1,5 +1,16 @@
-.rayas {
+.letters {
     display: flex;
     flex-direction: row;
-    gap: 20px
+    gap: 20px;
+    color: var(--color-green); 
+    font-size: 48px;
+    letter-spacing: 12px;
+    padding: 12px
+}
+
+.wrongs {
+    color: var(--color-pink);
+    font-size: 18px;
+    letter-spacing: 12px;
+    text-decoration:line-through;
 }

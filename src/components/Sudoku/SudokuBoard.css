@@ -6,24 +6,57 @@
     }
 
 .sdk-cell, .user-input, .green, .red {
-        width: 45px;
-        height: 45px;
+        width: 30px;
+        height: 30px;
         text-align: center;
-        border: 1px solid black
+        border: 0.5px solid var(--color-blue);
+        border-radius:2%;
+        font-family: 'Bruno Ace', cursive;
         }
 
+
+.sdk-cell::-webkit-inner-spin-button,
+.sdk-cell::-webkit-outer-spin-button, 
+.user-input::-webkit-inner-spin-button,
+.user-input::-webkit-outer-spin-button, 
+.green::-webkit-inner-spin-button,
+.green::-webkit-outer-spin-button, 
+.red::-webkit-inner-spin-button,
+.red::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#sdk-cell-2, #sdk-cell-5, #sdk-cell-11, #sdk-cell-14,
+#sdk-cell-20, #sdk-cell-23, #sdk-cell-29, #sdk-cell-32,
+#sdk-cell-38, #sdk-cell-41, #sdk-cell-47, #sdk-cell-50,
+#sdk-cell-56, #sdk-cell-59, #sdk-cell-65, #sdk-cell-68,
+#sdk-cell-74, #sdk-cell-77 {
+    border-right: 5px solid var(--color-blue) 
+}  
+
+#sdk-cell-18, #sdk-cell-19, #sdk-cell-20, 
+#sdk-cell-21, #sdk-cell-22, #sdk-cell-23,
+#sdk-cell-24, #sdk-cell-25, #sdk-cell-26,
+#sdk-cell-45, #sdk-cell-46, #sdk-cell-47,
+#sdk-cell-48, #sdk-cell-49, #sdk-cell-50,
+#sdk-cell-51, #sdk-cell-52, #sdk-cell-53 {
+border-bottom: 5px solid var(--color-blue) 
+}
+
 .sdk-cell {
-    color: black
+    color: white
 }
 
 .user-input {
-    color: blue;
+    color: var(--color-violet)
 }
 
 .green {
-    color: rgb(40, 169, 40);
+    color: var(--color-green)
 }
 
 .red {
-    color: red;
+    color: var(--color-pink)
 }
+

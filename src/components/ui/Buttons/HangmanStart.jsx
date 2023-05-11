@@ -12,7 +12,8 @@ const HangmanStart = ( { word, keyRefs, setWord, setDisabled, setMessage, setAtt
       setAttemps(10);
       setMessage(`Tienes 10 intentos`);   
       setWrongs([]); 
-      setRights([])   
+      setRights([]);
+      setSolution("ahorcado")   
       keyRefs.current.forEach((keyRef) => keyRef.disabled = false);        
     };
 

@@ -13,14 +13,15 @@ setDisabled(false);
 }}
   }, [solution])
 
+  
   return (
 <>
-    <div className="word">     
-<p>{solution}</p>
+    <div>     
+    <p className="letters">{solution}</p>
   </div>
 
- <div className="wrongs">
-   <p>{wrongs}</p> 
+ <div>
+   <p className="wrongs">{wrongs}</p> 
  </div>
  <HangmanKeyboard attemps={attemps} wrongs={wrongs} setMessage={setMessage} setDisabled={setDisabled}
  />

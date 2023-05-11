@@ -40,7 +40,8 @@ const HangmanKeyboard = ( {attemps, wrongs, setMessage, setDisabled} ) => {
 <button 
 key={alphabetLetter} 
 ref={(el) => (keyRefs.current[index] = el)}
-type="button" className="key" onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
+type="button" className="key" 
+onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
   ))
   } 
     </div>
