@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import './HangmanKeyboard.css'
 import { alphabet } from '../../data/data';
-import { KeyboardContext } from '../../pages/Hangman/Hangman';
+import { HangmanContext } from '../../pages/Hangman/Hangman';
 
 const HangmanKeyboard = ( {attemps, wrongs, setMessage, setDisabled} ) => {
     
-    const {word, keyRefs, setSolution, setAttemps, setWrongs, rights, setRights} = useContext(KeyboardContext)
+    const {word, keyRefs, setSolution, setAttemps, setWrongs, rights, setRights} = useContext(HangmanContext)
 
     const handleLetterSelection = (letter) => {
         const position = alphabet.indexOf(letter)

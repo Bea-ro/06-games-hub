@@ -1,13 +1,13 @@
 import React, { useState, useRef, createContext } from 'react';
-import Title from '../../components/ui/Title/Title';
+import GameHeader from '../../components/Header/GameHeader';
+import HangmanStart from '../../components/ui/Buttons/HangmanStart';
 import Message from '../../components/ui/Message/Message';
 import HangmanGameboard from '../../components/Hangman/HangmanGameboard';
-import HangmanStart from '../../components/ui/Buttons/HangmanStart';
-import BackButton from '../../components/ui/Buttons/BackButton';
 
-export const KeyboardContext = createContext()
+export const HangmanContext = createContext();
 
-const Hangman = ( {game, message, setMessage}) => {
+
+const Hangman = ( { message, setMessage}) => {
   
   const [word, setWord] = useState('ahorcado')
   const [disabled, setDisabled] = useState(false);
@@ -20,24 +20,21 @@ const Hangman = ( {game, message, setMessage}) => {
 console.log(word)
   return (
     <main>
-      <div className="game-header">
-      <BackButton/>
-      <Title game={game}/>
-      <HangmanStart word={word} setWord={setWord} setMessage={setMessage} disabled={disabled} 
-      setDisabled={setDisabled} setAttemps={setAttemps}
-      setSolution={setSolution} setWrongs={setWrongs} setRights={setRights}
-      keyRefs={keyRefs}
-      />
-      </div>
-
+      <HangmanContext.Provider value={{word:word, setWord:setWord, setMessage:setMessage, disabled:disabled, 
+     setDisabled:setDisabled, setAttemps:setAttemps,
+     setSolution:setSolution, setWrongs:setWrongs, setRights:setRights,
+     keyRefs:keyRefs}}>
+     <GameHeader StartButton={HangmanStart} game="Ahorcado"/>    
+     </HangmanContext.Provider>
+     
       <Message message={message}/>
       
-      <KeyboardContext.Provider value={{word:word, setSolution:setSolution, keyRefs:keyRefs, 
+      <HangmanContext.Provider value={{word:word, setSolution:setSolution, keyRefs:keyRefs, 
         setAttemps:setAttemps, setWrongs:setWrongs, rights:rights, setRights:setRights}}>
       <HangmanGameboard attemps={attemps} setMessage={setMessage} setDisabled={setDisabled} 
       solution={solution} wrongs={wrongs}
       />
-       </KeyboardContext.Provider>
+       </HangmanContext.Provider>
     </main>
   )
 }

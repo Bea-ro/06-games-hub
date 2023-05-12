@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
-import { emptyGameboard } from '../../../data/data';
+import React, { useEffect, useContext } from 'react';
 import './Button.css';
+import { TicTacToeContext } from '../../../pages/TicTacToe/TicTacToe';
+import { emptyGameboard } from '../../../data/data';
 
-const TicTacToeStart = ( { setCells, player, setPlayer, setMessage, disabled, setDisabled, setWinnerCells} ) => {
+
+
+const TicTacToeStart = () => {
     
+    const { setCells, player, setPlayer, setMessage, disabled, setDisabled, setWinnerCells} = useContext(TicTacToeContext)
     const players = ["X","O"]    
 
     const startPlay = () => {

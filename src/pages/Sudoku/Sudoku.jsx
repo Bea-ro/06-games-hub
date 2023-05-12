@@ -1,15 +1,14 @@
 import React, { useState, useRef, createContext } from 'react';
-import Title from '../../components/ui/Title/Title';
-import Message from '../../components/ui/Message/Message';
+import GameHeader from '../../components/Header/GameHeader';
 import SudokuStart from '../../components/ui/Buttons/SudokuStart';
+import Message from '../../components/ui/Message/Message';
 import SudokuGameboard from '../../components/Sudoku/SudokuGameboard';
-import BackButton from '../../components/ui/Buttons/BackButton';
 import SudokuSolve from '../../components/ui/Buttons/SudokuSolve';
 import SudokuCheck from '../../components/ui/Buttons/SudokuCheck';
 
-export const GameboardContext = createContext()
+export const SudokuContext = createContext();
 
-const Sudoku = ( { game, message, setMessage }) => {
+const Sudoku = ( { message, setMessage }) => {
 
   const [cells, setCells] = useState(Array(81).fill(null));
   const [puzzle, setPuzzle] = useState(Array(81).fill(null));
@@ -24,20 +23,15 @@ const Sudoku = ( { game, message, setMessage }) => {
   
   return (
     <main>
-      <div className="game-header">
-      <BackButton/>
-    <Title game={game}/>
-      <SudokuStart disabled={disabled} setDisabled={setDisabled}
-      setCells={setCells} puzzle={puzzle} setPuzzle={setPuzzle}
-      setFinish={setFinish} inputRefs={inputRefs} setMessage={setMessage}
-      />
-</div>
-
+      <SudokuContext.Provider value={{disabled:disabled, setDisabled:setDisabled,
+      setCells:setCells, puzzle:puzzle, setPuzzle:setPuzzle,
+      setFinish:setFinish, inputRefs:inputRefs, setMessage:setMessage}}>
+      <GameHeader StartButton={SudokuStart} game="Sudoku"/>
+      </SudokuContext.Provider>
       <SudokuSolve setDisabled={setDisabled} 
       hidden={hidden} setHidden={setHidden}
       setPuzzle={setPuzzle}
        setFinish={setFinish}/>
-      
       <SudokuCheck cells={cells}
       setDisabled={setDisabled} hidden={hidden} setHidden={setHidden}
        setMessage={setMessage} inputRefs={inputRefs}
@@ -47,10 +41,10 @@ const Sudoku = ( { game, message, setMessage }) => {
       
       <Message message={message}/>
       
-      <GameboardContext.Provider value={{cells:cells, setCells:setCells, setHidden:setHidden, 
+      <SudokuContext.Provider value={{cells:cells, setCells:setCells, setHidden:setHidden, 
         inputRefs:inputRefs}}>
       <SudokuGameboard/>
-      </GameboardContext.Provider>
+      </SudokuContext.Provider>
      
     </main>
   )

@@ -10,7 +10,7 @@
 
 .wrongs {
     color: var(--color-pink);
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: 12px;
     text-decoration:line-through;
 }

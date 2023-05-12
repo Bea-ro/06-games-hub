@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react';
-import { makepuzzle } from 'sudoku';
+import React, { useEffect, useContext } from 'react';
 import './Button.css';
+import { SudokuContext } from '../../../pages/Sudoku/Sudoku';
+import { makepuzzle } from 'sudoku';
 
-const SudokuStart = ( { disabled, setDisabled, setCells, puzzle, setPuzzle, setFinish, inputRefs, setMessage } ) => {
+
+
+const SudokuStart = () => {
  
+  const { disabled, setDisabled, setCells, puzzle, setPuzzle, setFinish, inputRefs, setMessage } = useContext(SudokuContext)
+
   const startPlay = () => {
     setPuzzle(makepuzzle);
     setDisabled(true);

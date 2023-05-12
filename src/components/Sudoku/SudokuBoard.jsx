@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import './SudokuBoard.css';
-import { GameboardContext } from '../../pages/Sudoku/Sudoku';
+import { SudokuContext } from '../../pages/Sudoku/Sudoku';
 
 
 const SudokuBoard = ( { setSelectedInput  } ) => {
 
-  const {cells, inputRefs } = useContext(GameboardContext)
+  const {cells, inputRefs } = useContext(SudokuContext)
 
 const handleInputClick = (i) => {
 setSelectedInput(i);
