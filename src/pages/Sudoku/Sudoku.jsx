@@ -1,10 +1,8 @@
 import React, { useState, useRef, createContext } from 'react';
-import GameHeader from '../../components/Header/GameHeader';
+import GameHeader from '../../components/Headers/GameHeader';
 import SudokuStart from '../../components/ui/Buttons/SudokuStart';
 import Message from '../../components/ui/Message/Message';
 import SudokuGameboard from '../../components/Sudoku/SudokuGameboard';
-import SudokuSolve from '../../components/ui/Buttons/SudokuSolve';
-import SudokuCheck from '../../components/ui/Buttons/SudokuCheck';
 
 export const SudokuContext = createContext();
 
@@ -22,31 +20,21 @@ const Sudoku = ( { message, setMessage }) => {
 
   
   return (
-    <main>
-      <SudokuContext.Provider value={{disabled:disabled, setDisabled:setDisabled,
+    <>
+    <SudokuContext.Provider value={{disabled:disabled, setDisabled:setDisabled,
       setCells:setCells, puzzle:puzzle, setPuzzle:setPuzzle,
       setFinish:setFinish, inputRefs:inputRefs, setMessage:setMessage}}>
       <GameHeader StartButton={SudokuStart} game="Sudoku"/>
       </SudokuContext.Provider>
-      <SudokuSolve setDisabled={setDisabled} 
-      hidden={hidden} setHidden={setHidden}
-      setPuzzle={setPuzzle}
-       setFinish={setFinish}/>
-      <SudokuCheck cells={cells}
-      setDisabled={setDisabled} hidden={hidden} setHidden={setHidden}
-       setMessage={setMessage} inputRefs={inputRefs}
-      puzzle={puzzle} setPuzzle={setPuzzle}
-       finish={finish} setFinish={setFinish}
-       />
-      
+    <main>
       <Message message={message}/>
-      
-      <SudokuContext.Provider value={{cells:cells, setCells:setCells, setHidden:setHidden, 
-        inputRefs:inputRefs}}>
+      <SudokuContext.Provider value={{cells:cells, setCells:setCells, 
+      hidden:hidden, setHidden:setHidden, inputRefs:inputRefs, setDisabled:setDisabled, 
+      puzzle:puzzle, setPuzzle:setPuzzle, finish:finish, setFinish:setFinish, setMessage}}>
       <SudokuGameboard/>
       </SudokuContext.Provider>
-     
     </main>
+    </>
   )
 }
 

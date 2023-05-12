@@ -3,6 +3,8 @@
     grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
     gap: 3px;
     padding: 10px;
+    max-height: 30vh;
+    min-width: 30vh;
     }
     
 .key {

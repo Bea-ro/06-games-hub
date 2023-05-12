@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import './SudokuKeyboard.css';
 import { sudokuNumbers } from '../../data/data';
-import { GameboardContext } from '../../pages/Sudoku/Sudoku';
+import { SudokuContext } from '../../pages/Sudoku/Sudoku';
 
 const SudokuKeyboard = ( { selectedInput } ) => {
 
-  const {cells, setCells, setHidden } = useContext(GameboardContext)
+  const {cells, setCells, setHidden } = useContext(SudokuContext)
   
     const handleNumberSelection = (number) => {
       setHidden(false);   

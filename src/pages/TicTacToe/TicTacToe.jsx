@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import GameHeader from '../../components/Header/GameHeader';
+import GameHeader from '../../components/Headers/GameHeader';
 import TicTacToeStart from '../../components/ui/Buttons/TicTacToeStart'
 import Message from '../../components/ui/Message/Message';
 import TicTacToeGameboard from '../../components/TicTacToe/TicTacToeGameboard';
@@ -15,17 +15,19 @@ const TicTacToe = ( { message, setMessage } ) => {
   const [winnerCells, setWinnerCells] = useState()
   
   return (
-    <main>
-      <TicTacToeContext.Provider value={{setCells:setCells, player:player, setPlayer:setPlayer, 
+    <>
+    <TicTacToeContext.Provider value={{setCells:setCells, player:player, setPlayer:setPlayer, 
       setMessage:setMessage, disabled:disabled, setDisabled:setDisabled,
       setWinnerCells:setWinnerCells}}>
       <GameHeader StartButton={TicTacToeStart} game="Tres en raya"/>
       </TicTacToeContext.Provider>      
+    <main> 
       <Message message={message}/>
       <TicTacToeGameboard cells={cells} setCells={setCells} player={player} setPlayer={setPlayer}
       setMessage={setMessage} disabled={disabled} setDisabled={setDisabled}
       winnerCells={winnerCells} setWinnerCells={setWinnerCells}/>
 </main>
+</>
   )
 };
 

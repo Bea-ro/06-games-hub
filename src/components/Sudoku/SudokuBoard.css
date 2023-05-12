@@ -1,17 +1,14 @@
 .sdk-square {
     display:grid;
     grid-template: repeat(9, 1fr)/repeat(9, 1fr);
-    max-width: fit-content;
-    max-height: fit-content;
     }
 
 .sdk-cell, .user-input, .green, .red {
-        width: 30px;
-        height: 30px;
         text-align: center;
         border: 0.5px solid var(--color-blue);
         border-radius:2%;
         font-family: 'Bruno Ace', cursive;
+        font-size: 18px;
         }
 
 

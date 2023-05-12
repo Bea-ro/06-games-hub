@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { solvepuzzle } from 'sudoku';
+import React, { useState, useEffect, useContext } from 'react';
 import './Button.css';
+import { SudokuContext } from '../../../pages/Sudoku/Sudoku';
+import { solvepuzzle } from 'sudoku';
 
-const SudokuCheck = ( { hidden, setHidden, setDisabled, cells, setMessage, inputRefs, puzzle, setPuzzle, finish, setFinish } ) => {
+
+const SudokuCheck = () => {
+
+  const { hidden, setHidden, setDisabled, cells, setMessage, inputRefs, puzzle, setPuzzle, finish, setFinish } = useContext(SudokuContext)
 
   const [checkDisabled, setCheckDisabled] = useState(true)
   const [cellsForCompare, setCellsForCompare] = useState()

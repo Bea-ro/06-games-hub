@@ -15,7 +15,7 @@ setDisabled(false);
 
   
   return (
-<>
+<div className="hangman-gameboard">
     <div>     
     <p className="letters">{solution}</p>
   </div>
@@ -26,7 +26,7 @@ setDisabled(false);
  <HangmanKeyboard attemps={attemps} wrongs={wrongs} setMessage={setMessage} setDisabled={setDisabled}
  />
 
-  </>  
+  </div>  
   )
 }
 

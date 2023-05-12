@@ -1,12 +1,13 @@
 .ttt-gameboard {
     display:grid;
     grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
-    padding: 24px;
+    padding: 7vh 0;
+    min-height: 65vh;
     }
 
 .gamecell {
-width: 76px;
-height: 76px;
+min-width: 10vw;
+min-height: 15vh;
 font-size: 48px; 
 }
 
