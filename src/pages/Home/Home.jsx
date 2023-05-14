@@ -6,6 +6,7 @@ import { games } from '../../data/games-data'
 import HomeHeader from '../../components/Headers/HomeHeader';
 
 const Home = () => {
+  
   return (
     <>
     <HomeHeader/>

@@ -4,18 +4,27 @@
     align-items: center;
     background-color: inherit;
     min-width: 240px;
+    padding: 0 24px;
 }
 
 .game-name {
-    color: var(--color-violet)
+    color: var(--color-violet);
+    padding-bottom: 10px;
 }
 
 .game-card h1, .game-card figure, .game-card img, .game-card p  {
     background-color: inherit;
 }
 
+.game-image {
+height: 30vh;
+width: 20vw;
+border-radius: 5%;
+}
+
 .game-description {
     color: var(--background-color);
-    font-family: 'Dosis', sans-serif;
     text-align: center;
+    padding-top: 12px;
+    font-size:14px
 }

@@ -1,4 +1,4 @@
-import React, { useState, useRef, createContext } from 'react';
+import React, { useState, useEffect, useRef, createContext } from 'react';
 import GameHeader from '../../components/Headers/GameHeader';
 import HangmanStart from '../../components/ui/Buttons/HangmanStart';
 import Message from '../../components/ui/Message/Message';
@@ -8,7 +8,7 @@ export const HangmanContext = createContext();
 
 const Hangman = ( { message, setMessage}) => {
   
-  const [word, setWord] = useState('ahorcado')
+  const [word, setWord] = useState('?')
   const [disabled, setDisabled] = useState(false);
   const [attemps, setAttemps] = useState(10)
   const [wrongs, setWrongs] = useState([]);
@@ -16,7 +16,11 @@ const Hangman = ( { message, setMessage}) => {
   const [solution, setSolution] = useState("") 
   const keyRefs = useRef([])
 
+  useEffect(()=>{setMessage("")},[])
+
 console.log(word)
+console.log(solution)
+
   return (
     <>
     <HangmanContext.Provider value={{word:word, setWord:setWord, setMessage:setMessage, disabled:disabled, 
@@ -28,9 +32,10 @@ console.log(word)
     <main>
       <Message message={message}/>
       <HangmanContext.Provider value={{word:word, setSolution:setSolution, keyRefs:keyRefs, 
-        setAttemps:setAttemps, setWrongs:setWrongs, rights:rights, setRights:setRights}}>
-      <HangmanGameboard attemps={attemps} setMessage={setMessage} setDisabled={setDisabled} 
-      solution={solution} wrongs={wrongs}
+        setAttemps:setAttemps, setWrongs:setWrongs, rights:rights, setRights:setRights, 
+        disabled:disabled}}>
+      <HangmanGameboard word={word} attemps={attemps} setMessage={setMessage} setDisabled={setDisabled} 
+      solution={solution} wrongs={wrongs} 
       />
        </HangmanContext.Provider>
     </main>

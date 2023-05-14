@@ -5,9 +5,10 @@ import { SudokuContext } from '../../pages/Sudoku/Sudoku';
 
 const SudokuKeyboard = ( { selectedInput } ) => {
 
-  const {cells, setCells, setHidden } = useContext(SudokuContext)
+  const {cells, setCells, setHidden, disabled } = useContext(SudokuContext)
   
     const handleNumberSelection = (number) => {
+      console.log('number es', number) 
       setHidden(false);   
       const newCells = cells.map((cell, index) => selectedInput === index ? number -1 : cell)
       setCells(newCells);
@@ -16,10 +17,13 @@ const SudokuKeyboard = ( { selectedInput } ) => {
   return (
     <div className="sudoku-keyboard">
         {
-  sudokuNumbers.map((num) => (
+  sudokuNumbers.map((num, index) => (
+    
 <button className="key" 
 key={num}
-type="button" onClick={()=>{handleNumberSelection(num)}}>{num}</button>
+type="button" 
+disabled={!disabled}
+onClick={()=>{handleNumberSelection(num)}}>{num}</button>
   ))
   } 
     </div>

@@ -15,12 +15,12 @@ const HangmanStart = () => {
       setMessage(`Tienes 10 intentos`);   
       setWrongs([]); 
       setRights([]);
-      setSolution("ahorcado")   
+      setSolution("?")   
       keyRefs.current.forEach((keyRef) => keyRef.disabled = false);        
     };
 
     useEffect(() => {
-     if (word !== "ahorcado") {
+     if (word !== "?") {
      setSolution(word.split('').map((l) => "_"))
     }},[word])
     

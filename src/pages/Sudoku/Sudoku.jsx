@@ -1,4 +1,4 @@
-import React, { useState, useRef, createContext } from 'react';
+import React, { useState, useEffect, useRef, createContext } from 'react';
 import GameHeader from '../../components/Headers/GameHeader';
 import SudokuStart from '../../components/ui/Buttons/SudokuStart';
 import Message from '../../components/ui/Message/Message';
@@ -15,9 +15,7 @@ const Sudoku = ( { message, setMessage }) => {
   const [finish, setFinish] = useState(false)
   const inputRefs = useRef([]);
 
-  console.log('cells', cells)
-  console.log('puzzle', puzzle)
-
+  useEffect(()=>{setMessage("")},[])
   
   return (
     <>
@@ -29,8 +27,9 @@ const Sudoku = ( { message, setMessage }) => {
     <main>
       <Message message={message}/>
       <SudokuContext.Provider value={{cells:cells, setCells:setCells, 
-      hidden:hidden, setHidden:setHidden, inputRefs:inputRefs, setDisabled:setDisabled, 
-      puzzle:puzzle, setPuzzle:setPuzzle, finish:finish, setFinish:setFinish, setMessage}}>
+      hidden:hidden, setHidden:setHidden, inputRefs:inputRefs, disabled:disabled, setDisabled:setDisabled, 
+      puzzle:puzzle, setPuzzle:setPuzzle, finish:finish, setFinish:setFinish, setMessage,
+      }}>
       <SudokuGameboard/>
       </SudokuContext.Provider>
     </main>

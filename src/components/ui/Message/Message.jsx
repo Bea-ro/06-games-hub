@@ -5,7 +5,7 @@ const Message = ( { message } ) => {
 
   return (
     <>
-<h2 className="message">{message}</h2>
+<h2 className="message" dangerouslySetInnerHTML={{__html: message}}></h2>
     </>
   )
 }

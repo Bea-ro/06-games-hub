@@ -7,9 +7,12 @@ font-family: 'Bruno Ace', cursive;
 
 #start {
     background-color: var(--color-green);
-    border: 1px solid var(--color-green);
+    border: none;
+    font-size: 16px;
 }
 
 #back {
-    background-color: var(--color-violet);
+    background-color: var(--color-pink);
+    border: none;
+    font-size: 16px;
 }

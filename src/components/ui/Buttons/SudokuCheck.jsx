@@ -34,7 +34,7 @@ const SudokuCheck = () => {
            inputRefs.current[i].className = 'red'
           }    
       }}
-        if (finish && !cells.includes(null)) {cells === puzzle ? setMessage('¡Enhorabuena crack!') : setMessage('OOOHHH')}
+        if (finish && !cells.includes(null)) {cells === puzzle ? setMessage('¡Enhorabuena crack!') : setMessage('¡No has tenido suerte!')}
         }, [finish])
   
     return (

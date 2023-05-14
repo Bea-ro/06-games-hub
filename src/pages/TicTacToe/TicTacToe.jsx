@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import GameHeader from '../../components/Headers/GameHeader';
 import TicTacToeStart from '../../components/ui/Buttons/TicTacToeStart'
 import Message from '../../components/ui/Message/Message';
@@ -13,6 +13,8 @@ const TicTacToe = ( { message, setMessage } ) => {
   const [player, setPlayer] = useState();
   const [disabled, setDisabled] = useState(false);
   const [winnerCells, setWinnerCells] = useState()
+
+  useEffect(()=>{setMessage("")},[])
   
   return (
     <>

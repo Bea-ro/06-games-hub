@@ -2,7 +2,6 @@
 
 @font-face {
 font-family: 'Bruno Ace', cursive;
-font-family: 'Dosis', sans-serif;
   src: url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dosis&display=swap');
   font-weight: 400;
   font-style: normal;
@@ -48,7 +47,7 @@ font-family: 'Dosis', sans-serif;
 }
 
 main {
-  height: 75vh;
+  height: 72vh;
   display: flex;
   flex-direction: column;
   align-items: center;

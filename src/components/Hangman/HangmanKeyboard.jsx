@@ -5,7 +5,7 @@ import { HangmanContext } from '../../pages/Hangman/Hangman';
 
 const HangmanKeyboard = ( {attemps, wrongs, setMessage, setDisabled} ) => {
     
-    const {word, keyRefs, setSolution, setAttemps, setWrongs, rights, setRights} = useContext(HangmanContext)
+    const {word, keyRefs, setSolution, setAttemps, setWrongs, rights, setRights, disabled } = useContext(HangmanContext)
 
     const handleLetterSelection = (letter) => {
         const position = alphabet.indexOf(letter)
@@ -23,12 +23,10 @@ const HangmanKeyboard = ( {attemps, wrongs, setMessage, setDisabled} ) => {
           
           setAttemps(updatedAttemps);
           setWrongs([...wrongs, letter]);
-          setMessage(`Tienes ${updatedAttemps} intentos`);
-          if (updatedAttemps === 0) { 
-            setMessage("¡No has tenido suerte! Vuelve a jugar");
-            setDisabled(false);
-            setSolution(word);
-          }
+          if (updatedAttemps === 0) {
+          setMessage(`¡No has tenido suerte! <br> Buscabas "${word}"`) 
+          setDisabled(false);
+          } else {setMessage(`Tienes ${updatedAttemps} intentos`)}
         }
         };
 
@@ -40,7 +38,7 @@ const HangmanKeyboard = ( {attemps, wrongs, setMessage, setDisabled} ) => {
 <button 
 key={alphabetLetter} 
 ref={(el) => (keyRefs.current[index] = el)}
-type="button" className="key" 
+type="button" className="key" disabled={!disabled}
 onClick={() => {handleLetterSelection(alphabetLetter)}}>{alphabetLetter}</button>
   ))
   } 

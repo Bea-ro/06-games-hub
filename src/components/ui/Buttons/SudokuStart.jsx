@@ -9,12 +9,14 @@ const SudokuStart = () => {
  
   const { disabled, setDisabled, setCells, puzzle, setPuzzle, setFinish, inputRefs, setMessage } = useContext(SudokuContext)
 
+  console.log(disabled)
+
   const startPlay = () => {
     setPuzzle(makepuzzle);
     setDisabled(true);
     setFinish(false);  
     setMessage("");
-    inputRefs.current.map((inputRef) => inputRef.className = 'sdk-cell')    
+    inputRefs.current.map((inputRef) => inputRef.className = 'sdk-cell');
   };
 
   useEffect(() => {
