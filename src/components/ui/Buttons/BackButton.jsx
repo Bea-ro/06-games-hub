@@ -6,7 +6,7 @@ const BackButton = () => {
 
   return (
     <>
-       <button className="button" id="back"><Link to="/">Volver</Link></button>
+       <button className="button" id="back"><Link to="/home">Volver</Link></button>
     </>
   )
 }

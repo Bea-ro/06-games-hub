@@ -13,7 +13,7 @@ min-width: 85vw
 }
 
 .game-card-container {
-background-color: var(--color-blue);
+background-color: var(--color-violet);
 padding: 20px;
 border-radius: 15px;
 }

@@ -1,3 +1,5 @@
+export const validUser = {email: 'brm@hotmail.com', password: '1234'}
+
 export const emptyGameboard = [null, null, null, null, null, null, null, null, null]
 
 export const lines = [

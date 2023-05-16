@@ -5,7 +5,7 @@ padding: 10px;
 font-family: 'Bruno Ace', cursive;
 }
 
-#start {
+#start, #login {
     background-color: var(--color-green);
     border: none;
     font-size: 16px;
