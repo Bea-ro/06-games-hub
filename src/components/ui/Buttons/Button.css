@@ -16,3 +16,8 @@ font-family: 'Bruno Ace', cursive;
     border: none;
     font-size: 16px;
 }
+
+#logout {
+    border: none;
+    color: var(--color-violet)
+}

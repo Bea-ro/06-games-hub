@@ -1,4 +1,4 @@
-export const validUser = {email: 'brm@hotmail.com', password: '1234'}
+export const validUser = {user: 'BeaRo', password: 'b_1234_ro'}
 
 export const emptyGameboard = [null, null, null, null, null, null, null, null, null]
 

@@ -9,7 +9,7 @@ const Home = () => {
   
   return (
     <>
-    <HomeHeader/>
+    <HomeHeader />
     <main className="main-home">
       <ul className="game-cards-container">
         {

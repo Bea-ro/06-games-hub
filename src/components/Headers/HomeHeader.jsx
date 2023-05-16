@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Headers.css';
+import LogoutButton from '../ui/Buttons/LogoutButton';
+import AuthContext from '../../App';
 
-const Header = () => {
+const HomeHeader = () => {
+
+  const { user } = useContext(AuthContext)
+
   return (
     <header>
-      <h1>¿A qué jugamos?</h1>
+      <h1>¿A qué jugamos {user.user}?</h1>
+      <LogoutButton/>
     </header>
   )
 }
 
-export default Header
+export default HomeHeader
