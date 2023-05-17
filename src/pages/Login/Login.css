@@ -18,3 +18,7 @@ form {
     font-size: 16px;
     padding: 3px
 }
+
+.register-link {
+    color: var(--color-violet)
+}

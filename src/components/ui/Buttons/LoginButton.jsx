@@ -1,10 +1,10 @@
 import React from 'react';
 import './Button.css'
 
-const LoginButton = () => {
+const LoginButton = ( {id, text} ) => {
   return (
     <>
-         <button type="submit" className="button" id="login">Entrar</button>
+         <button type="submit" className="button" id={id}>{text}</button>
     </>
   )
 }

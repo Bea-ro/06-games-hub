@@ -5,10 +5,9 @@ const Footer = () => {
   return (
     <footer>
     <p>
-      Página creada por Beatriz Rodríguez para
+      Página creada por Beatriz Rodríguez para{' '}
       <a href="https://www.rockthecode.es/" target="blank" rel="noopener noreferrer">
-        {' '}
-        {'{Rock theCode}'}
+          Rock{'{theCode}'}
       </a>
     </p>
   </footer>

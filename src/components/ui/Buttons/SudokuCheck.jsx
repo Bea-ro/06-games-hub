@@ -18,6 +18,7 @@ const SudokuCheck = () => {
         setFinish(true);        
         };   
 
+
         useEffect(() => {
           cells.includes(null) ? setCheckDisabled(true) : setCheckDisabled(false);
           setCellsForCompare(inputRefs.current.map((inputRef) => inputRef.value))      
@@ -34,8 +35,14 @@ const SudokuCheck = () => {
            inputRefs.current[i].className = 'red'
           }    
       }}
-        if (finish && !cells.includes(null)) {cells === puzzle ? setMessage('¡Enhorabuena crack!') : setMessage('¡No has tenido suerte!')}
+        if (finish && !cells.includes(null)) {
+          const arraysMatch = cells.every((value, index) => value === puzzle[index]);
+          arraysMatch ? setMessage('¡Enhorabuena crack!') : setMessage('¡No has tenido suerte!')}
         }, [finish])
+
+        
+
+
   
     return (
       <>

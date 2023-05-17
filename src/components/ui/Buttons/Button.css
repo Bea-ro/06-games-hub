@@ -22,6 +22,10 @@ font-family: 'Bruno Ace', cursive;
     color: var(--color-violet)
 }
 
+#register {
+    background-color: var(--color-pink)
+}
+
 #check:disabled{
     color: var(--color-violet)
 }

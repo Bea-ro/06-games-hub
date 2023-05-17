@@ -41,9 +41,9 @@ const Login = () => {
           <input type="password" name="password" id="password" className="form-input"
           placeholder="contraseña" required onChange={handleInput} />
   
-       <LoginButton/>
+       <LoginButton text="Entrar" id="login"/>
       </form>
-      <p className="register-cta">Regístrate <Link to="/register">{"aquí"}</Link> para poder jugar</p>
+      <p className="register-cta">Regístrate <Link to="/register" className="register-link">{"aquí"}</Link> para poder jugar</p>
       
       </main>
     </>

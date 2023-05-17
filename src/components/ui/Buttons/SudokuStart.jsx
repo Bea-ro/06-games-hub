@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import './Button.css';
 import { SudokuContext } from '../../../pages/Sudoku/Sudoku';
-import { makepuzzle} from 'sudoku';
+import { makepuzzle } from 'sudoku';
 
 
 

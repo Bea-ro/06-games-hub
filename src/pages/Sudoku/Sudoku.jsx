@@ -15,8 +15,8 @@ const Sudoku = ( { message, setMessage }) => {
   const [finish, setFinish] = useState(false)
   const inputRefs = useRef([]);
 
-  console.log('puzzle', puzzle)
   console.log('cells', cells)
+
 
   useEffect(()=>{setMessage("")},[])
   
