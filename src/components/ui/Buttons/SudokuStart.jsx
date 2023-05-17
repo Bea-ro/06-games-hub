@@ -1,15 +1,13 @@
 import React, { useEffect, useContext } from 'react';
 import './Button.css';
 import { SudokuContext } from '../../../pages/Sudoku/Sudoku';
-import { makepuzzle } from 'sudoku';
+import { makepuzzle} from 'sudoku';
 
 
 
 const SudokuStart = () => {
  
   const { disabled, setDisabled, setCells, puzzle, setPuzzle, setFinish, inputRefs, setMessage } = useContext(SudokuContext)
-
-  console.log(disabled)
 
   const startPlay = () => {
     setPuzzle(makepuzzle);
@@ -19,8 +17,10 @@ const SudokuStart = () => {
     inputRefs.current.map((inputRef) => inputRef.className = 'sdk-cell');
   };
 
+ 
+
   useEffect(() => {
-    setCells(puzzle)
+    setCells(puzzle);
   },[puzzle])
 
 

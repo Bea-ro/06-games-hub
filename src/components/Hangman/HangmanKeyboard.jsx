@@ -24,7 +24,7 @@ const HangmanKeyboard = ( {attemps, wrongs, setMessage, setDisabled} ) => {
           setAttemps(updatedAttemps);
           setWrongs([...wrongs, letter]);
           if (updatedAttemps === 0) {
-          setMessage(`¡No has tenido suerte! <br> Buscabas "${word}"`) 
+          setMessage(`¡No has tenido suerte! <br> La palabra es "${word}"`) 
           setDisabled(false);
           } else {setMessage(`Tienes ${updatedAttemps} intentos`)}
         }

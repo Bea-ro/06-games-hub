@@ -18,9 +18,6 @@ const Hangman = ( { message, setMessage}) => {
 
   useEffect(()=>{setMessage("")},[])
 
-console.log(word)
-console.log(solution)
-
   return (
     <>
     <HangmanContext.Provider value={{word:word, setWord:setWord, setMessage:setMessage, disabled:disabled, 

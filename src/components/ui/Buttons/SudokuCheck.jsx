@@ -39,7 +39,7 @@ const SudokuCheck = () => {
   
     return (
       <>
-           <button type="button" className="button" onClick={checkSudoku} 
+           <button type="button" className="button" id="check" onClick={checkSudoku} 
            hidden={hidden}
            disabled={checkDisabled}
            >Comprobar</button>

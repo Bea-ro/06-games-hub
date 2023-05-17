@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { validUser } from '../../data/data';
 import './Login.css'
@@ -6,33 +6,29 @@ import LoginButton from '../../components/ui/Buttons/LoginButton';
 import LoginHeader from '../../components/Headers/LoginHeader';
 import { AuthContext } from '../../App';
 
-const Login = (  ) => {
+const Login = () => {
 
-  const {user, setUser, authenticated, setAuthenticated, setIsLogged} = useContext(AuthContext)
+  const {completeUser, setCompleteUser, setIsLogged} = useContext(AuthContext)
   const navigate = useNavigate() 
   
   const handleInput = (ev) => {
     const { name, value } = ev.target;
-    setUser({ ...user, [name]: value })
+    setCompleteUser({ ...completeUser, [name]: value })
   }
+  
 
   const handleSubmit = (ev) => {
   ev.preventDefault();
-  if (user.user === validUser.user && user.password === validUser.password) {
-  setAuthenticated(true)
+  if (completeUser.user === validUser.user && completeUser.password === validUser.password) {
+  localStorage.setItem('authenticated', true)
   setIsLogged (true);
   navigate('/home')
 } else {
     alert('El email o la contraseña son incorrectos')
   }
   }
-
-useEffect(()=>{
-  localStorage.setItem('authenticated', authenticated)
-},[authenticated])
-
-
   
+
   return (
     <>
 <LoginHeader/>

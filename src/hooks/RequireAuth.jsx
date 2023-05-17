@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
-import AuthContext from '../App';
 
 const RequireAuth = ( {children} ) => {
 
-  const { authenticated } = useContext(AuthContext)
+  const isAuthenticated = localStorage.getItem('authenticated') === 'true'
 
-  if (!authenticated) {
+  if (!isAuthenticated) {
     return <Navigate to='/'/>
     }
     return children

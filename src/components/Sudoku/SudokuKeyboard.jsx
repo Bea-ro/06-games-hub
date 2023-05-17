@@ -8,7 +8,7 @@ const SudokuKeyboard = ( { selectedInput } ) => {
   const {cells, setCells, setHidden, disabled } = useContext(SudokuContext)
   
     const handleNumberSelection = (number) => {
-      console.log('number es', number) 
+     
       setHidden(false);   
       const newCells = cells.map((cell, index) => selectedInput === index ? number -1 : cell)
       setCells(newCells);

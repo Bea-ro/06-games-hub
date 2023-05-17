@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Button.css';
-import AuthContext from '../../../App';
+import { AuthContext } from '../../../App';
 
 const LogoutButton = () => {
 
@@ -10,10 +10,9 @@ const LogoutButton = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
+    localStorage.removeItem('authenticated');
     setIsLogged (false);
-    //pte borrar de localStorage
     navigate('/');
-    console.log('hace logout')
     };
 
   return ( 

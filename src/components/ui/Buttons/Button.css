@@ -21,3 +21,13 @@ font-family: 'Bruno Ace', cursive;
     border: none;
     color: var(--color-violet)
 }
+
+#check:disabled{
+    color: var(--color-violet)
+}
+
+#start:disabled{
+    background-color: var(--background-color);
+    color: var(--color-violet);
+    border: 1px solid var(--color-violet);
+}
