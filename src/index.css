@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dosis&display=swap');
 
 @font-face {
-font-family: 'Bruno Ace', cursive;
+  font-family: 'Bruno Ace', cursive;
   src: url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dosis&display=swap');
   font-weight: 400;
   font-style: normal;
@@ -34,7 +34,6 @@ font-family: 'Bruno Ace', cursive;
   --background-color: #37023a;
 
   --border-blue: 10px solid var(--color-blue);
-
 }
 
 * {
@@ -63,3 +62,8 @@ button {
   border: none;
 }
 
+@media screen and (max-width: 1113px) {
+  main {
+    height: auto;
+  }
+}

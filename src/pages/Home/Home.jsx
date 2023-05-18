@@ -1,9 +1,10 @@
 import React from 'react';
 import './Home.css'
 import { Link } from 'react-router-dom';
+import HomeHeader from '../../components/Headers/HomeHeader';
 import GameCard from '../../components/GameCard/GameCard';
 import { games } from '../../data/games-data'
-import HomeHeader from '../../components/Headers/HomeHeader';
+
 
 const Home = () => {
   

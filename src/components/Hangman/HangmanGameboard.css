@@ -20,3 +20,8 @@ align-items: center;
     text-decoration:line-through;
 }
 
+@media screen and (max-width: 1113px) {
+    .letters { 
+    font-size: 38px;
+}
+}

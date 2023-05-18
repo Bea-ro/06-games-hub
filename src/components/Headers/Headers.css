@@ -1,17 +1,33 @@
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-   border-radius: 5px; 
-   min-height: 15vh;
-   text-align: center;
-   padding: 24px 0;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  border-radius: 5px;
+  min-height: 15vh;
+  text-align: center;
+  padding: 24px;
+}
 
-  .logout-container {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        padding: 10px;   
+.logout-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1113px) {
+  header {
+    gap: 6px;
+    flex-wrap: wrap;
   }
+  header h1 {
+    font-size: 28px;
+    padding-top: 28px;
+    order: -1;
+    flex-basis: 100%;
+  }
+  .logout-container {
+    padding: 0;
+  }
+}

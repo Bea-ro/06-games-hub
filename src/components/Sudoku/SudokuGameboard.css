@@ -1,20 +1,40 @@
 .sdk-gameboard {
-    display: flex;
-    gap: 20px;
-    padding: 7vh 0;
-    min-height: 65vh;
+  display: flex;
+  gap: 20px;
+  padding: 7vh 0;
+  /* min-height: 65vh; */
 }
 
 .sdk-keyboard-and-buttons {
-display: flex;
-flex-direction: column;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sdk-buttons {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1113px) {
+  .sdk-keyboard-and-buttons {
+    display: block;
+  }
+
+  .sdk-gameboard {
     flex-direction: column;
-    gap: 12px;
-    padding: 12px;
-    align-items: center;
+    max-width: 334px;
+    padding: 10px 0;
+    gap: 0;
+  }
+  .sdk-square {
+    max-width: 334px;
+  }
+  .sdk-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
 }

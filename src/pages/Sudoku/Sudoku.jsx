@@ -6,38 +6,45 @@ import SudokuGameboard from '../../components/Sudoku/SudokuGameboard';
 
 export const SudokuContext = createContext();
 
-const Sudoku = ( { message, setMessage }) => {
-
+const Sudoku = ({ message, setMessage }) => {
   const [cells, setCells] = useState(Array(81).fill(null));
   const [puzzle, setPuzzle] = useState(Array(81).fill(null));
   const [disabled, setDisabled] = useState(false);
-  const [hidden, setHidden] = useState (true);
-  const [finish, setFinish] = useState(false)
+  const [hidden, setHidden] = useState(true);
+  const [finish, setFinish] = useState(false);
   const inputRefs = useRef([]);
 
-  console.log('cells', cells)
 
+  useEffect(() => {
+    setMessage('');
+  }, []);
 
-  useEffect(()=>{setMessage("")},[])
-  
   return (
     <>
-    <SudokuContext.Provider value={{disabled:disabled, setDisabled:setDisabled,
-      setCells:setCells, puzzle:puzzle, setPuzzle:setPuzzle,
-      setFinish:setFinish, inputRefs:inputRefs, setMessage:setMessage}}>
-      <GameHeader StartButton={SudokuStart} game="Sudoku"/>
+      <SudokuContext.Provider
+        value={{
+          cells: cells,
+          setCells: setCells,
+          disabled: disabled,
+          setDisabled: setDisabled,
+          puzzle: puzzle,
+          setPuzzle: setPuzzle,
+          finish: finish,
+          setFinish: setFinish,
+          hidden: hidden,
+            setHidden: setHidden,
+          inputRefs: inputRefs,
+          setMessage: setMessage    
+        }}
+      >
+        <GameHeader StartButton={SudokuStart} game="Sudoku" />
+      <main>
+        <Message message={message} />
+          <SudokuGameboard />
+      </main>
       </SudokuContext.Provider>
-    <main>
-      <Message message={message}/>
-      <SudokuContext.Provider value={{cells:cells, setCells:setCells, 
-      hidden:hidden, setHidden:setHidden, inputRefs:inputRefs, disabled:disabled, setDisabled:setDisabled, 
-      puzzle:puzzle, setPuzzle:setPuzzle, finish:finish, setFinish:setFinish, setMessage,
-      }}>
-      <SudokuGameboard/>
-      </SudokuContext.Provider>
-    </main>
     </>
-  )
-}
+  );
+};
 
-export default Sudoku
+export default Sudoku;

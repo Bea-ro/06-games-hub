@@ -1,13 +1,13 @@
 footer {
-    text-align: center;
-    max-height: 10vh;
-  }
-  
-  footer p {
-    font-size: small;
-    padding: 24px;
-  }
-  
-  footer a {
-    color: var(--color-violet)
-  }
+  text-align: center;
+  max-height: 10vh;
+}
+
+footer p {
+  font-size: small;
+  padding: 24px;
+}
+
+footer a {
+  color: var(--color-violet);
+}

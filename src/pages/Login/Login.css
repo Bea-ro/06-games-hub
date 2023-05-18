@@ -22,3 +22,9 @@ form {
 .register-link {
     color: var(--color-violet)
 }
+
+@media screen and (max-width: 1113px) {
+.register-cta {
+    padding-bottom: 46px;
+}
+}

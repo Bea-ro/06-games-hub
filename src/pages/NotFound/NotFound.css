@@ -1,16 +1,17 @@
-.loading-error-figure {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    color: var(--color-dark-blue);
-    height: 73vh;
-    text-align: center;
-    background-color: whitesmoke;
+.not-found-page {
+  height: 85vh;
 }
 
-.loading-error-message {
-    padding: 0 24px
-    }
+.not-found-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-dark-blue);
+  text-align: center;
+}
 
+.not-found-message {
+  padding: 0 24px;
+}

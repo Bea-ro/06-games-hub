@@ -6,21 +6,20 @@ import SudokuSolve from '../ui/Buttons/SudokuSolve';
 import SudokuCheck from '../ui/Buttons/SudokuCheck';
 
 const SudokuGameboard = () => {
-  
-  const [selectedInput, setSelectedInput] = useState()
-  
+  const [selectedInput, setSelectedInput] = useState();
+
   return (
     <div className="sdk-gameboard">
-   <SudokuBoard setSelectedInput={setSelectedInput}/>
-   <div className="sdk-keyboard-and-buttons">
-    <SudokuKeyboard selectedInput={selectedInput}/>
-    <div className="sdk-buttons">
-    <SudokuSolve/>
-      <SudokuCheck/>
-      </div>
+      <SudokuBoard setSelectedInput={setSelectedInput} />
+      <div className="sdk-keyboard-and-buttons">
+        <SudokuKeyboard selectedInput={selectedInput} />
+        <div className="sdk-buttons">
+          <SudokuSolve />
+          <SudokuCheck />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SudokuGameboard
+export default SudokuGameboard;

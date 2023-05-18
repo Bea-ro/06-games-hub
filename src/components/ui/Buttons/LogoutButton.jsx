@@ -5,13 +5,13 @@ import { AuthContext } from '../../../App';
 
 const LogoutButton = () => {
 
-  const { setIsLogged } = useContext(AuthContext)
+   const { setCompleteUser } = useContext(AuthContext)
 
   const navigate = useNavigate()
 
   const handleLogout = () => {
+    setCompleteUser({});
     localStorage.removeItem('authenticated');
-    setIsLogged (false);
     navigate('/');
     };
 

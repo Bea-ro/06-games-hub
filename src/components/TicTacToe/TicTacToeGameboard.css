@@ -1,37 +1,45 @@
 .ttt-gameboard {
-    display:grid;
-    grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
-    padding: 7vh 0;
-    min-height: 65vh;
-    }
+  display: grid;
+  grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+  padding: 7vh 0;
+  min-height: 65vh;
+}
 
 .gamecell {
-min-width: 10vw;
-min-height: 15vh;
-font-size: 48px; 
+  min-width: 10vw;
+  min-height: 15vh;
+  font-size: 48px;
 }
 
-#gamecell-1, #gamecell-4 {
-border-right: var(--border-blue);
-border-bottom: var(--border-blue);
-border-left: var(--border-blue);
+#gamecell-1,
+#gamecell-4 {
+  border-right: var(--border-blue);
+  border-bottom: var(--border-blue);
+  border-left: var(--border-blue);
 }
 
-#gamecell-0, #gamecell-2, #gamecell-3, #gamecell-5  {
-    border-bottom: var(--border-blue);
+#gamecell-0,
+#gamecell-2,
+#gamecell-3,
+#gamecell-5 {
+  border-bottom: var(--border-blue);
 }
 
 #gamecell-7 {
-    border-right: var(--border-blue);
-    border-left: var(--border-blue);
-    }
-    
+  border-right: var(--border-blue);
+  border-left: var(--border-blue);
+}
+
 .green {
-    color: var(--color-green)
+  color: var(--color-green);
 }
 
 .pink {
-    color: var(--color-pink)
+  color: var(--color-pink);
 }
 
-
+@media screen and (max-width: 1113px) {
+  .gamecell {
+    width:100px;
+  }
+}

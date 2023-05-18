@@ -1,13 +1,12 @@
 import React from 'react';
-import './Title.css'
+import './Title.css';
 
-const Title = ( {game} ) => {
-
+const Title = ({ game }) => {
   return (
     <>
-        <h1 className="game-title">{game}</h1>
-        </>
-  )
-}
+      <h1 className="game-title">{game}</h1>
+    </>
+  );
+};
 
-export default Title
+export default Title;
