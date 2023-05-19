@@ -2,7 +2,7 @@ import React, { useState, createContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
-import RequireAuth from './hooks/requireAuth';
+import RequireAuth from './hooks/RequireAuth';
 import Home from './pages/Home/Home';
 import TicTacToe from './pages/TicTacToe/TicTacToe';
 import Hangman from './pages/Hangman/Hangman';
