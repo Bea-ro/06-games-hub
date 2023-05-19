@@ -5,6 +5,7 @@
 
 .sdk-cell,
 .user-input,
+.clue-input,
 .green,
 .red {
   text-align: center;
@@ -111,7 +112,7 @@
   border-left: 5px solid var(--color-blue);
 }
 
-.sdk-cell {
+.sdk-cell, .clue-input {
   color: white;
 }
 
@@ -130,6 +131,7 @@
 @media screen and (max-width: 1113px) {
   .sdk-cell,
   .user-input,
+  .clue-input,
   .green,
   .red {
     font-size: 16px;

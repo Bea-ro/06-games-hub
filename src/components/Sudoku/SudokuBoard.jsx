@@ -7,7 +7,9 @@ const SudokuBoard = ({ setSelectedInput }) => {
 
   const handleInputClick = (i) => {
     setSelectedInput(i);
-    inputRefs.current[i].className = 'user-input';
+    if (inputRefs.current[i].className != 'clue-input') {
+      inputRefs.current[i].className = 'user-input';
+    }
   };
 
   return (
