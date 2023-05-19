@@ -26,7 +26,7 @@ function App() {
       >
         <Routes>
           <Route index element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/registro" element={<Register />} />
           <Route path="*" element={<NotFound />} />
           <Route
             path="/home"

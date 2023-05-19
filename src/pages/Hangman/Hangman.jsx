@@ -17,7 +17,7 @@ const Hangman = ({ message, setMessage }) => {
 
   useEffect(() => {
     setMessage('');
-  }, []);
+  }, []); 
 
   return (
     <>

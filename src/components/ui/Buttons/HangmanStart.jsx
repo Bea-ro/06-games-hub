@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import './Button.css';
 import { HangmanContext } from '../../../pages/Hangman/Hangman';
+import { words } from '../../../data/data';
 
 const HangmanStart = () => {
     
   const {word, keyRefs, setWord, setDisabled, setMessage, setAttemps, disabled, setSolution, setWrongs, setRights} = useContext(HangmanContext)
-    const words = ["arbol","casa", "mujer", "perro"] //ampliar en data o ver API RAE  
-        
+    
     const startPlay = () => {
       const randomWord = Math.floor(Math.random() * words.length);
       setWord(words[randomWord]);

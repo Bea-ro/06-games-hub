@@ -20,6 +20,8 @@
 .sdk-cell::-webkit-outer-spin-button,
 .user-input::-webkit-inner-spin-button,
 .user-input::-webkit-outer-spin-button,
+.clue-input::-webkit-inner-spin-button,
+.clue-input::-webkit-outer-spin-button,
 .green::-webkit-inner-spin-button,
 .green::-webkit-outer-spin-button,
 .red::-webkit-inner-spin-button,

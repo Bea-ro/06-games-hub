@@ -8,9 +8,6 @@ const SudokuKeyboard = ({ selectedInput }) => {
 
   const handleNumberSelection = (number) => {
     setHidden(false);
-    console.log(selectedInput);
-    console.log(inputRefs.current[1].value);
-    console.log(inputRefs.current[1].className);
     const newCells = cells.map((cell, i) =>
       selectedInput === i && inputRefs.current[i].className != 'clue-input' ? number - 1 : cell
     );

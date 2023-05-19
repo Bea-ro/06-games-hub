@@ -54,7 +54,7 @@ const Login = () => {
         </form>
         <p className="register-cta">
           Regístrate{' '}
-          <Link to="/register" className="register-link">
+          <Link to="/registro" className="register-link">
             {'aquí'}
           </Link>{' '}
           para poder jugar

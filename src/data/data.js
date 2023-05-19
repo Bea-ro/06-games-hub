@@ -26,4 +26,29 @@ export const color = {
   O: 'var(--color-green)'
 }
 
+export const words = [
+  "acuario",
+  "barquillo",
+  "costurero",
+  "despierto",
+  "empapado",
+  "fieltro",
+  "guisantes",
+  "habitable",
+  "impresora",
+  "jengibre",
+  "luminosidad",
+  "macetero",
+  "nupcial",
+  "ombligo",
+  "proteger",
+  "quimera",
+  "restregar",
+  "sintoniza",
+  "tozudo",
+  "uraño",
+  "vertical",
+  "zarandear"
+]
+
     
