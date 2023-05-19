@@ -17,7 +17,7 @@ const Hangman = ({ message, setMessage }) => {
 
   useEffect(() => {
     setMessage('');
-  }, []); 
+  }, []);
 
   return (
     <>
@@ -31,26 +31,15 @@ const Hangman = ({ message, setMessage }) => {
           setAttemps: setAttemps,
           setSolution: setSolution,
           setWrongs: setWrongs,
+          rights: rights,
           setRights: setRights,
           keyRefs: keyRefs
         }}
       >
         <GameHeader StartButton={HangmanStart} game="Ahorcado" />
-      </HangmanContext.Provider>
-      <main>
-        <Message message={message} />
-        <HangmanContext.Provider
-          value={{
-            word: word,
-            setSolution: setSolution,
-            keyRefs: keyRefs,
-            setAttemps: setAttemps,
-            setWrongs: setWrongs,
-            rights: rights,
-            setRights: setRights,
-            disabled: disabled
-          }}
-        >
+
+        <main>
+          <Message message={message} />
           <HangmanGameboard
             word={word}
             attemps={attemps}
@@ -59,8 +48,8 @@ const Hangman = ({ message, setMessage }) => {
             solution={solution}
             wrongs={wrongs}
           />
-        </HangmanContext.Provider>
-      </main>
+        </main>
+      </HangmanContext.Provider>
     </>
   );
 };

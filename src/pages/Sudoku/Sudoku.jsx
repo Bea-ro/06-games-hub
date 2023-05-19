@@ -32,7 +32,7 @@ const Sudoku = ({ message, setMessage }) => {
           finish: finish,
           setFinish: setFinish,
           hidden: hidden,
-            setHidden: setHidden,
+          setHidden: setHidden,
           inputRefs: inputRefs,
           setMessage: setMessage    
         }}

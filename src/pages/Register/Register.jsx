@@ -6,21 +6,12 @@ import LoginButton from '../../components/ui/Buttons/LoginButton';
 
 
 const Register = () => {
-  const handleInputRegister = (ev) => {
-    const { name, value } = ev.target;
-    // setUser({ ...user, [name]: value })
-  };
-
-  const handleRegister = (ev) => {
-    ev.preventDefault();
-    // login(user)
-  };
-
+ 
   return (
     <>
       <LoginHeader />
       <main>
-        <form onSubmit={handleRegister} noValidate>
+        <form noValidate>
           <input
             type="text"
             name="user"
@@ -28,7 +19,6 @@ const Register = () => {
             className="form-input"
             placeholder="usuario"
             required
-            onChange={handleInputRegister}
           />
 
           <input
@@ -38,7 +28,6 @@ const Register = () => {
             className="form-input"
             placeholder="contraseña"
             required
-            onChange={handleInputRegister}
           />
 
           <LoginButton text="Registrar" id="register" />
