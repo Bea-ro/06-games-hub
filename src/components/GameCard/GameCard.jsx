@@ -5,7 +5,7 @@ const GameCard = ({ game, image, description }) => {
   return (
     <div className="game-card">
       <h1 className="game-name">{game}</h1>
-      <img src={image} alt={game} className="game-image" />
+      <img src={require(`../../../public/${image}`).default} alt={game} className="game-image" />
       <p className="game-description" dangerouslySetInnerHTML={{ __html: description }}></p>
     </div>
   );
