@@ -6,7 +6,7 @@ const HomeHeader = () => {
  
   return (
     <header>
-      <h1>¿A qué jugamos{` ${localStorage.getItem('user')}`}?</h1>
+      <h1>¿A qué jugamos{localStorage.getItem('user')? ` ${localStorage.getItem('user')}`:''}?</h1>
       <LogoutButton />
     </header>
   );
