@@ -19,6 +19,7 @@ const Login = () => {
     ev.preventDefault();
     if (completeUser.user === validUser.user && completeUser.password === validUser.password) {
       localStorage.setItem('authenticated', true);
+      localStorage.setItem('user', completeUser.user);
       navigate('/home');
     } else {
       alert('El email o la contraseña son incorrectos.');
