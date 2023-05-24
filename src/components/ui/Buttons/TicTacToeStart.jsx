@@ -25,7 +25,7 @@ const TicTacToeStart = () => {
 
   return (
     <>
-        <button type="button" className="button" id="start" onClick={startPlay} disabled={disabled}>Start</button>
+        <button type="button" className="button" id="start" data-testid="test-start" onClick={startPlay} disabled={disabled}>Start</button>
     </>
   )
 }

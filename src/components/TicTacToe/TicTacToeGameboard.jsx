@@ -53,7 +53,6 @@ const TicTacToeGameboard = ({
           key={index}
           type="button"
           className="gamecell"
-          data-testid="test-gamecell"
           id={`gamecell-${index}`}
           onClick={() => {
             handleMove(index);

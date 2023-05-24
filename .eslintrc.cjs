@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb', 'plugin:react/jsx runtime',
+    'plugin:prettier/recommended'
   ],
   overrides: [
   ],
@@ -17,5 +18,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    "prettier/prettier": "error"
   },
 };
