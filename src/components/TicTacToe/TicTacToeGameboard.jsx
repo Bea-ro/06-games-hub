@@ -11,7 +11,8 @@ const TicTacToeGameboard = ({
   disabled,
   setDisabled,
   winnerCells,
-  setWinnerCells
+  setWinnerCells,
+  cellRefs
 }) => {
   const handleMove = (index) => {
     const newCells = [...cells];
@@ -20,8 +21,14 @@ const TicTacToeGameboard = ({
     setPlayer(player === 'O' ? 'X' : 'O');
     setMessage(`Es el turno de ${player}`);
   };
-
+ 
   useEffect(() => {
+      cells.forEach((cell, index) => {
+        if (cell === 'X' || cell === 'O') {
+          cellRefs.current[index].disabled = true
+        } 
+    })
+    
     let winner = false;
     lines.forEach((line) => {
       if (
@@ -58,6 +65,7 @@ const TicTacToeGameboard = ({
             handleMove(index);
           }}
           disabled={disabled ? false : true}
+          ref={(el) => (cellRefs.current[index] = el)}
         >
           {cell}
         </button>

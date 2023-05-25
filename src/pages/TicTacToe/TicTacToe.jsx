@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useRef } from 'react';
 import GameHeader from '../../components/Headers/GameHeader';
 import TicTacToeStart from '../../components/ui/Buttons/TicTacToeStart';
 import Message from '../../components/ui/Message/Message';
@@ -12,6 +12,7 @@ const TicTacToe = ({ message, setMessage }) => {
   const [player, setPlayer] = useState();
   const [disabled, setDisabled] = useState(false);
   const [winnerCells, setWinnerCells] = useState();
+  const cellRefs = useRef([]);
 
   useEffect(() => {
     setMessage('');
@@ -27,7 +28,8 @@ const TicTacToe = ({ message, setMessage }) => {
           setMessage: setMessage,
           disabled: disabled,
           setDisabled: setDisabled,
-          setWinnerCells: setWinnerCells
+          setWinnerCells: setWinnerCells,
+          cellRefs: cellRefs
         }}
       >
         <GameHeader StartButton={TicTacToeStart} game="Tres en raya" />
@@ -44,6 +46,7 @@ const TicTacToe = ({ message, setMessage }) => {
           setDisabled={setDisabled}
           winnerCells={winnerCells}
           setWinnerCells={setWinnerCells}
+          cellRefs={cellRefs}
         />
       </main>
     </>

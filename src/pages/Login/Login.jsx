@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useRef, useContext } from 'react';
 import './Login.css';
 import { AuthContext } from '../../App';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,6 +9,8 @@ import LoginButton from '../../components/ui/Buttons/LoginButton';
 const Login = () => {
   const { completeUser, setCompleteUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const userInput = useRef()
+  const passwordInput = useRef()
 
   const handleInput = (ev) => {
     const { name, value } = ev.target;
@@ -23,6 +25,8 @@ const Login = () => {
       navigate('/home');
     } else {
       alert('El email o la contraseña son incorrectos.');
+      userInput.current.value=''
+      passwordInput.current.value=''
     }
   };
 
@@ -39,9 +43,11 @@ const Login = () => {
             placeholder="usuario"
             required
             onChange={handleInput}
+            ref={userInput}
           />
 
           <input
+            ref={passwordInput}
             type="password"
             name="password"
             id="password"

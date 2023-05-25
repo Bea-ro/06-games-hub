@@ -7,7 +7,7 @@ import { emptyGameboard } from '../../../data/data';
 
 const TicTacToeStart = () => {
     
-    const { setCells, player, setPlayer, setMessage, disabled, setDisabled, setWinnerCells} = useContext(TicTacToeContext)
+    const { setCells, player, setPlayer, setMessage, disabled, setDisabled, setWinnerCells, cellRefs} = useContext(TicTacToeContext)
     const players = ["X","O"]    
 
     const startPlay = () => {
@@ -16,7 +16,8 @@ const TicTacToeStart = () => {
       setDisabled(true);
       setMessage(`Es el turno de ${player}`)
       setCells(emptyGameboard);
-      setWinnerCells()
+      setWinnerCells();
+      cellRefs.current.forEach((cellRef) => cellRef.disabled = false);       
     };
 
     useEffect(() => {
