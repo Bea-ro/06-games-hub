@@ -7,7 +7,7 @@ export const games = [
   },
   {
     name: 'Ahorcado',
-    description: 'Si no eres de pocas palabras, <br> ¡el juego te está eperando!',
+    description: 'Si no eres de pocas palabras, <br> ¡el juego te está esperando!',
     image: 'hangman.png',
     link: 'ahorcado'
   },
